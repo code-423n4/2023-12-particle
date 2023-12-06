@@ -41,7 +41,7 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 
 ---
 
-# Particle audit details
+# Particle Leverage AMM audit details
 - Total Prize Pool: $20,280 USDC (Notion: Total award pool)
   - HM awards: $20,280 USDC (Notion: HM (main) pool)
   - Analysis awards: XXX XXX USDC (Notion: Analysis pool)
