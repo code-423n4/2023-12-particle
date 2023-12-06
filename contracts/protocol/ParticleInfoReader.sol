@@ -50,6 +50,7 @@ contract ParticleInfoReader is Ownable2StepUpgradeable, UUPSUpgradeable, Multica
      * @param particleAddr address of particle position manager
      */
     function updateParticleAddress(address particleAddr) external onlyOwner {
+        if (particleAddr == address(0)) revert Errors.InvalidValue();
         PARTICLE_POSITION_MANAGER_ADDR = particleAddr;
         _particlePositionManager = ParticlePositionManager(particleAddr);
         emit UpdateParticleAddress(particleAddr);

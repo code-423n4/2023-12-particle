@@ -14,33 +14,6 @@ library SwapPosition {
     }
 
     /*=============================================================
-                               Info Logic
-    ==============================================================*/
-
-    /**
-     * @notice Getter for a swap position's info
-     * @param self The mapping containing all swap positions
-     * @param swapKey The key of the swap (borrower, swapId)
-     * @return swapPosition The liquidity position info struct
-     */
-    function getInfo(
-        mapping(bytes32 => Info) storage self,
-        bytes32 swapKey
-    ) internal view returns (Info storage swapPosition) {
-        swapPosition = self[swapKey];
-    }
-
-    /**
-     * @notice Getter for a swap position's token address
-     * @param self The mapping containing all swap positions
-     * @param swapKey The key of the swap (borrower, swapId)
-     * @return token The token address of the swap position
-     */
-    function getToken(mapping(bytes32 => Info) storage self, bytes32 swapKey) internal view returns (address token) {
-        token = self[swapKey].token;
-    }
-
-    /*=============================================================
                                Swap Logic
     ==============================================================*/
 

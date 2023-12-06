@@ -27,29 +27,6 @@ library LiquidityPosition {
     ==============================================================*/
 
     /**
-     * @notice Getter for a liquidity position's info
-     * @param self The mapping containing all liquidity positions
-     * @param tokenId The token id of the liquidity position NFT
-     * @return liquidityPosition The liquidity position info struct
-     */
-    function getInfo(
-        mapping(uint256 => Info) storage self,
-        uint256 tokenId
-    ) internal view returns (Info storage liquidityPosition) {
-        liquidityPosition = self[tokenId];
-    }
-
-    /**
-     * @notice Getter for a liquidity position's underlying owner
-     * @param self The mapping containing all liquidity positions
-     * @param tokenId The token id of the liquidity position NFT
-     * @return owner The owner of this liquidity position info struct
-     */
-    function getOwner(mapping(uint256 => Info) storage self, uint256 tokenId) internal view returns (address owner) {
-        owner = self[tokenId].owner;
-    }
-
-    /**
      * @notice Getter for a liquidity position's renewal cutoff time
      * @param self The mapping containing all liquidity positions
      * @param tokenId The token id of the liquidity position NFT

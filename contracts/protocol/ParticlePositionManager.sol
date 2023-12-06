@@ -9,14 +9,12 @@ import {UUPSUpgradeable} from "../../lib/openzeppelin-contracts-upgradeable/cont
 import {TransferHelper} from "../../lib/v3-periphery/contracts/libraries/TransferHelper.sol";
 
 import {IParticlePositionManager} from "../interfaces/IParticlePositionManager.sol";
-import {INonfungiblePositionManager} from "../interfaces/INonfungiblePositionManager.sol";
 import {Base} from "../libraries/Base.sol";
 import {LiquidityPosition} from "../libraries/LiquidityPosition.sol";
 import {Lien} from "../libraries/Lien.sol";
 import {SwapPosition} from "../libraries/SwapPosition.sol";
 import {DataStruct, DataCache} from "../libraries/Structs.sol";
 import {Errors} from "../libraries/Errors.sol";
-import {ParticleInfoReader} from "./ParticleInfoReader.sol";
 
 contract ParticlePositionManager is
     IParticlePositionManager,
@@ -549,6 +547,7 @@ contract ParticlePositionManager is
 
     /// @inheritdoc IParticlePositionManager
     function updateDexAggregator(address dexAggregator) external override onlyOwner {
+        if (dexAggregator == address(0)) revert Errors.InvalidValue();
         DEX_AGGREGATOR = dexAggregator;
         emit UpdateDexAggregator(dexAggregator);
     }
@@ -582,7 +581,7 @@ contract ParticlePositionManager is
     }
 
     /// @inheritdoc IParticlePositionManager
-    function withdrawTreasury(address token, address recipient) external override onlyOwner {
+    function withdrawTreasury(address token, address recipient) external override onlyOwner nonReentrant {
         uint256 withdrawAmount = _treasury[token];
         if (withdrawAmount > 0) {
             if (recipient == address(0)) {

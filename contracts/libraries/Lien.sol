@@ -27,19 +27,6 @@ library Lien {
     }
 
     /**
-     * @notice Getter for a lien's liquidity
-     * @param self The mapping containing all liens
-     * @param lienKey The key of the lien (borrower, lienId)
-     * @return liquidity The amount of liquidity locked in the lien
-     */
-    function getLiquidity(
-        mapping(bytes32 => Info) storage self,
-        bytes32 lienKey
-    ) internal view returns (uint128 liquidity) {
-        liquidity = self[lienKey].liquidity;
-    }
-
-    /**
      * @notice Update a lien's preminum amounts
      * @dev Caller of this function should ensure lien is renewable by checking cutoff time
      * @param self The mapping containing all liens
