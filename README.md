@@ -1,17 +1,16 @@
 # Particle Leverage AMM (LAMM) Protocol 
 Invitational Audit Details
 
-- Total Prize Pool: $20,280 USDC (Notion: Total award pool)
-  - HM awards: $20,280 USDC (Notion: HM (main) pool)
-  - Analysis awards: XXX XXX USDC (Notion: Analysis pool)
-  - QA awards: XXX XXX USDC (Notion: QA pool)
-  - Bot Race awards: XXX XXX USDC (Notion: Bot Race pool)
-  - Gas awards: XXX XXX USDC (Notion: Gas pool)
-  - Judge awards: $3,380 USDC (Notion: Judge Fee)
-  - Lookout awards: XXX XXX USDC (Notion: Sum of Pre-sort fee + Pre-sort early bonus)
+- Total Prize Pool: $24,150 USDC (Notion: Total award pool)
+  - HM awards: $18,252 USDC (Notion: HM (main) pool)
+  - Analysis awards: $1,014 USDC (Notion: Analysis pool)
+  - QA awards: $507 USDC (Notion: QA pool)
+  - Gas awards: $507 USDC (Notion: Gas pool)
+  - Judge awards: $3,370 USDC (Notion: Judge Fee)
   - Scout awards: $500 USDC (Notion: Scout fee - but usually $500 USDC)
+
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2023-12-particle/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2023-12-particle-leverage-amm-protocol-invitational/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts December 11, 2023 20:00 UTC 
 - Ends December 21, 2023 20:00 UTC
