@@ -1,47 +1,6 @@
-# ✨ So you want to run an audit
+# Particle Leverage AMM (LAMM) Protocol 
+Invitational Audit Details
 
-This `README.md` contains a set of checklists for our audit collaboration.
-
-Your audit will use two repos: 
-- **an _audit_ repo** (this one), which is used for scoping your audit and for providing information to wardens
-- **a _findings_ repo**, where issues are submitted (shared with you after the audit) 
-
-Ultimately, when we launch the audit, this repo will be made public and will contain the smart contracts to be reviewed and all the information needed for audit participants. The findings repo will be made public after the audit report is published and your team has mitigated the identified issues.
-
-Some of the checklists in this doc are for **C4 (🐺)** and some of them are for **you as the audit sponsor (⭐️)**.
-
----
-# Repo setup
-
-## ⭐️ Sponsor: Add code to this repo
-
-- [ ] Create a PR to this repo with the below changes:
-- [ ] Provide a self-contained repository with working commands that will build (at least) all in-scope contracts, and commands that will run tests producing gas reports for the relevant contracts.
-- [ ] Make sure your code is thoroughly commented using the [NatSpec format](https://docs.soliditylang.org/en/v0.5.10/natspec-format.html#natspec-format).
-- [ ] Please have final versions of contracts and documentation added/updated in this repo **no less than 48 business hours prior to audit start time.**
-- [ ] Be prepared for a 🚨code freeze🚨 for the duration of the audit — important because it establishes a level playing field. We want to ensure everyone's looking at the same code, no matter when they look during the audit. (Note: this includes your own repo, since a PR can leak alpha to our wardens!)
-
-
----
-
-## ⭐️ Sponsor: Edit this `README.md` file
-
-- [ ] Modify the contents of this `README.md` file. Describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2022-08-foundation#readme))
-- [ ] Review the Gas award pool amount. This can be adjusted up or down, based on your preference - just flag it for Code4rena staff so we can update the pool totals across all comms channels.
-- [ ] Optional / nice to have: pre-record a high-level overview of your protocol (not just specific smart contract functions). This saves wardens a lot of time wading through documentation.
-- [ ] [This checklist in Notion](https://code4rena.notion.site/Key-info-for-Code4rena-sponsors-f60764c4c4574bbf8e7a6dbd72cc49b4#0cafa01e6201462e9f78677a39e09746) provides some best practices for Code4rena audits.
-
-## ⭐️ Sponsor: Final touches
-- [ ] Review and confirm the details in the section titled "Scoping details" and alert Code4rena staff of any changes.
-- [ ] Check that images and other files used in this README have been uploaded to the repo as a file and then linked in the README using absolute path (e.g. `https://github.com/code-423n4/yourrepo-url/filepath.png`)
-- [ ] Ensure that *all* links and image/file paths in this README use absolute paths, not relative paths
-- [ ] Check that all README information is in markdown format (HTML does not render on Code4rena.com)
-- [ ] Remove any part of this template that's not relevant to the final version of the README (e.g. instructions in brackets and italic)
-- [ ] Delete this checklist and all text above the line below when you're ready.
-
----
-
-# Particle audit details
 - Total Prize Pool: $20,280 USDC (Notion: Total award pool)
   - HM awards: $20,280 USDC (Notion: HM (main) pool)
   - Analysis awards: XXX XXX USDC (Notion: Analysis pool)
@@ -55,7 +14,125 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-12-particle/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts December 11, 2023 20:00 UTC 
-- Ends December 21, 2023 20:00 UTC 
+- Ends December 21, 2023 20:00 UTC
+
+## Overview
+
+Particle LAMM protocol enables permissionless leverage trading for any ERC20 tokens. The key idea is to borrow concentrated liquidity from AMMs (Uniswap v3 as a start). For a concentrated liquidity position, its price boundaries mathematically define the amount of tokens to convert at all price points. When borrowing from a concentrated liquidity position, the protocol calculates the exact amount required to top up upfront, such that the contract always locks enough tokens in case the price moves adversely to a price boundary. This design eliminates the need for a price oracle.
+
+Whitepaper: [Medium](https://medium.com/@ParticleLabs/introducing-particle-leverage-amm-fcf0b3db8c55)
+Developer handbook (code overview): [Gitbook](https://erc20-docs.particle.trade/)
+Website: [Website](https://particle.trade)
+Twitter: [Twitter](https://x.com/particle_trade)
+Discord: [Discord](https://discord.particle.trade)
+
+## Scope
+
+| Contract | SLOC | Purpose | Libraries used |  
+| ----------- | ----------- | ----------- | ----------- |
+| [contracts/protocol/ParticlePositionManager.sol](https://github.com/code-423n4/2023-12-particle/blob/main/contracts/protocol/ParticlePositionManager.sol) | 416 | Main contract to mint/increase/decrease/collect/reclaim liquidity, open/close/liquidate positon, add premium, and admin control | [`@openzeppelin/contracts`](https://github.com/openzeppelin/openzeppelin-contracts/tree/0a25c1940ca220686588c4af3ec526f725fe2582) [`@openzeppelin/contracts-upgradable`](https://github.com/openzeppelin/openzeppelin-contracts-upgradeable/tree/58fa0f81c4036f1a3b616fdffad2fd27e5d5ce21) [`@uniswap/v3-periphery`](https://github.com/uniswap/v3-periphery/tree/80f26c86c57b8a5e4b913f42844d4c8bd274d058) |
+
+### Scoping Details
+
+```
+- How many contracts are in scope?:  9
+- Total SLoC for these contracts?:  1309
+- How many external imports are there?: 15 
+- How many separate interfaces and struct definitions are there for the contracts within scope?:  1 interface, 9 structs
+- Does most of your code generally use composition or inheritance?:   Inheritance
+- What is the overall line coverage percentage provided by your tests?: 95%
+- Is this an upgrade of an existing system?: False
+- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): AMM, ERC-20 Token
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  True 
+- Please describe required context:   Uniswap v3 basic math, Uniswap liquidity logic
+- Does it use an oracle?:  False
+- Describe any novel or unique curve logic or mathematical models your code uses: Uniswap basic math, most importantly conversion of liquidity into different token amounts under different price points
+- Is this either a fork of or an alternate implementation of another project?:   False
+- Does it use a side-chain?:  False
+- Describe any specific areas you would like addressed: About the design: (1) is the collateral guarantee safe in all conditions, meaning, the LPs suffers no higher impermanent loss than Uniswap itself (except for Uniswap's own rounding error) (2) borrowed liquidity should earn no less fees compared to the same liquidity would have otherwise earned in the pool (3) do we use uniswap critical variables correctly, such as the feeGrowth parameters and how we handle the premiumPortion (4) are the liquidation conditions safe or exploitable. In addition, about the implementation details: access control, token edge-case handling, reentrancy risks, and proper integration with external contracts.
+```
+
+## Setup
+Cloning with submodules
+```
+git clone --recurse-submodules
+```
+
+Updating with submodule if the repo was cloned without --recurse-submodules
+```
+git submodule update --init --recursive
+```
+
+Add the following to `.env`
+```
+PRIVATE_KEY=[WALLET_PRIVATE_KEY]
+MAINNET_RPC_URL=https://eth-mainnet.g.alchemy.com/v2/[ALCHEMY_API_KEY]
+GOERLI_RPC_URL=https://eth-goerli.g.alchemy.com/v2/[ALCHEMY_API_KEY]
+ETHERSCAN_API_KEY=[ETHERSCAN_API_KEY]
+```
+
+Run
+``` 
+foundryup
+source .env
+```
+
+## Test
+Unit tests
+
+```bash
+forge test -vv --fork-url $MAINNET_RPC_URL --fork-block-number [BLOCK_NUMBER]
+```
+
+Gas report
+
+```bash
+forge test --gas-report --fork-url $MAINNET_RPC_URL --fork-block-number [BLOCK_NUMBER]
+```
+
+Coverage
+
+```bash
+forge coverage --ir-minimum --fork-url $MAINNET_RPC_URL --fork-block-number [BLOCK_NUMBER]
+```
+
+## Uniswap libraries diff
+```
+diff -u ./lib/v3-core/contracts/libraries/FullMath.sol ./contracts/libraries/FullMath.sol --ignore-space-change
+diff -u ./lib/v3-core/contracts/libraries/TickMath.sol ./contracts/libraries/TickMath.sol --ignore-space-change
+diff -u ./lib/v3-periphery/contracts/libraries/LiquidityAmounts.sol ./contracts/libraries/LiquidityAmounts.sol --ignore-space-change
+diff -u ./lib/v3-periphery/contracts/libraries/PoolAddress.sol ./contracts/libraries/PoolAddress.sol --ignore-space-change
+diff -u ./lib/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol ./contracts/interfaces/INonfungiblePositionManager.sol --ignore-space-change
+```
+
+## Foundry Deployment
+Deploy
+```
+forge script script/DeployPositionManager.s.sol:DeployParticlePositionManager --rpc-url $GOERLI_RPC_URL/$MAINNET_RPC_URL --private-key $PRIVATE_KEY --broadcast --verify -vv
+```
+
+Verify
+```
+forge verify-contract [CONTRACT_ADDRESS] contracts/protocol/ParticlePositionManager.sol:ParticlePositionManager --chain goerli/mainnet --watch
+```
+
+## Hardhat Deployment
+Dependencies
+```
+yarn install
+source .env
+```
+
+Deploy
+```
+yarn deploy script/deployPositionManager.ts --network goerli/mainnet --show-stack-traces
+```
+
+Verfiy
+```
+yarn verify --network goerli/mainnet [IMPLMENTATION_ADDRESS]
+yarn verify --network goerli/mainnet [PROXY_ADDRESS] [IMPLMENTATION_ADDRESS] 0x
+```
 
 ## Automated Findings / Publicly Known Issues
 
@@ -65,84 +142,4 @@ Automated findings output for the audit can be found [here](https://github.com/c
 
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
-[ ⭐️ SPONSORS: Are there any known issues or risks deemed acceptable that shouldn't lead to a valid finding? If so, list them here. ]
 
-
-# Overview
-
-[ ⭐️ SPONSORS: add info here ]
-
-## Links
-
-- **Previous audits:** 
-- **Documentation:**
-- **Website:**
-- **Twitter:** 
-- **Discord:** 
-
-
-# Scope
-
-[ ⭐️ SPONSORS: add scoping and technical details here ]
-
-- [ ] In the table format shown below, provide the name of each contract and:
-  - [ ] source lines of code (excluding blank lines and comments) in each *For line of code counts, we recommend running prettier with a 100-character line length, and using [cloc](https://github.com/AlDanial/cloc).* 
-  - [ ] external contracts called in each
-  - [ ] libraries used in each
-
-*List all files in scope in the table below (along with hyperlinks) -- and feel free to add notes here to emphasize areas of focus.*
-
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| [contracts/folder/sample.sol](https://github.com/code-423n4/repo-name/blob/contracts/folder/sample.sol) | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
-
-## Out of scope
-
-*List any files/contracts that are out of scope for this audit.*
-
-# Additional Context
-
-- [ ] Describe any novel or unique curve logic or mathematical models implemented in the contracts
-- [ ] Please list specific ERC20 that your protocol is anticipated to interact with. Could be "any" (literally anything, fee on transfer tokens, ERC777 tokens and so forth) or a list of tokens you envision using on launch.
-- [ ] Please list specific ERC721 that your protocol is anticipated to interact with.
-- [ ] Which blockchains will this code be deployed to, and are considered in scope for this audit?
-- [ ] Please list all trusted roles (e.g. operators, slashers, pausers, etc.), the privileges they hold, and any conditions under which privilege escalation is expected/allowable
-- [ ] In the event of a DOS, could you outline a minimum duration after which you would consider a finding to be valid? This question is asked in the context of most systems' capacity to handle DoS attacks gracefully for a certain period.
-- [ ] Is any part of your implementation intended to conform to any EIP's? If yes, please list the contracts in this format: 
-  - `Contract1`: Should comply with `ERC/EIPX`
-  - `Contract2`: Should comply with `ERC/EIPY`
-
-## Attack ideas (Where to look for bugs)
-*List specific areas to address - see [this blog post](https://medium.com/code4rena/the-security-council-elections-within-the-arbitrum-dao-a-comprehensive-guide-aa6d001aae60#9adb) for an example*
-
-## Main invariants
-*Describe the project's main invariants (properties that should NEVER EVER be broken).*
-
-## Scoping Details 
-[ ⭐️ SPONSORS: please confirm/edit the information below. ]
-
-```
-- If you have a public code repo, please share it here:  
-- How many contracts are in scope?:   9
-- Total SLoC for these contracts?:  1309
-- How many external imports are there?: 15 
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  1 interface, 9 structs
-- Does most of your code generally use composition or inheritance?:   Inheritance
-- How many external calls?:   
-- What is the overall line coverage percentage provided by your tests?: 95%
-- Is this an upgrade of an existing system?: False
-- Check all that apply (e.g. timelock, NFT, AMM, ERC20, rollups, etc.): AMM, ERC-20 Token
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:  True - 
-- Please describe required context:   Uniswap v3 basic math, Uniswap liquidity logic
-- Does it use an oracle?:  No
-- Describe any novel or unique curve logic or mathematical models your code uses: Uniswap basic math, most importantly conversion of liquidity into different token amounts under different price points
-- Is this either a fork of or an alternate implementation of another project?:   False
-- Does it use a side-chain?: 
-- Describe any specific areas you would like addressed:
-```
-
-# Tests
-
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
-
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
