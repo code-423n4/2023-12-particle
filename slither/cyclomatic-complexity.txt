@@ -1,0 +1,10 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.18s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+TickMath.getSqrtRatioAtTick(int24) (contracts/libraries/TickMath.sol#25-56) has a high cyclomatic complexity (24).
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#cyclomatic-complexity
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 1 result(s) found

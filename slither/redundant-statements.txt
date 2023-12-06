@@ -1,0 +1,13 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.10s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+Redundant expression "status (lib/forge-std/lib/ds-test/src/test.sol#73)" inDSTest (lib/forge-std/lib/ds-test/src/test.sol#18-592)
+Redundant expression "status (lib/forge-std/src/StdCheats.sol#815)" inStdCheats (lib/forge-std/src/StdCheats.sol#639-817)
+Redundant expression "status (lib/forge-std/src/StdUtils.sol#191)" inStdUtils (lib/forge-std/src/StdUtils.sol#9-198)
+Redundant expression "status (lib/forge-std/src/StdUtils.sol#196)" inStdUtils (lib/forge-std/src/StdUtils.sol#9-198)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#redundant-statements
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 4 result(s) found

@@ -1,0 +1,9 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.05s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+Modifier StdCheatsSafe.skipWhenForking() (lib/forge-std/src/StdCheats.sol#582-586) does not always execute _; or revertModifier StdCheatsSafe.skipWhenNotForking() (lib/forge-std/src/StdCheats.sol#588-592) does not always execute _; or revertReference: https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-modifier
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 2 result(s) found

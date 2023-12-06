@@ -1,0 +1,129 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.37s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+FullMath.mulDiv(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#15-103) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (contracts/libraries/FullMath.sol#63)
+	- inv = (3 * denominator) ^ 2 (contracts/libraries/FullMath.sol#83)
+FullMath.mulDiv(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#15-103) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (contracts/libraries/FullMath.sol#63)
+	- inv *= 2 - denominator * inv (contracts/libraries/FullMath.sol#87)
+FullMath.mulDiv(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#15-103) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (contracts/libraries/FullMath.sol#63)
+	- inv *= 2 - denominator * inv (contracts/libraries/FullMath.sol#88)
+FullMath.mulDiv(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#15-103) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (contracts/libraries/FullMath.sol#63)
+	- inv *= 2 - denominator * inv (contracts/libraries/FullMath.sol#89)
+FullMath.mulDiv(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#15-103) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (contracts/libraries/FullMath.sol#63)
+	- inv *= 2 - denominator * inv (contracts/libraries/FullMath.sol#90)
+FullMath.mulDiv(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#15-103) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (contracts/libraries/FullMath.sol#63)
+	- inv *= 2 - denominator * inv (contracts/libraries/FullMath.sol#91)
+FullMath.mulDiv(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#15-103) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (contracts/libraries/FullMath.sol#63)
+	- inv *= 2 - denominator * inv (contracts/libraries/FullMath.sol#92)
+FullMath.mulDiv(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#15-103) performs a multiplication on the result of a division:
+	- prod0 = prod0 / twos (contracts/libraries/FullMath.sol#68)
+	- result = prod0 * inv (contracts/libraries/FullMath.sol#100)
+Math.mulDiv(uint256,uint256,uint256) (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#55-134) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#101)
+	- inverse = (3 * denominator) ^ 2 (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#116)
+Math.mulDiv(uint256,uint256,uint256) (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#55-134) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#101)
+	- inverse *= 2 - denominator * inverse (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#120)
+Math.mulDiv(uint256,uint256,uint256) (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#55-134) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#101)
+	- inverse *= 2 - denominator * inverse (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#121)
+Math.mulDiv(uint256,uint256,uint256) (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#55-134) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#101)
+	- inverse *= 2 - denominator * inverse (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#122)
+Math.mulDiv(uint256,uint256,uint256) (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#55-134) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#101)
+	- inverse *= 2 - denominator * inverse (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#123)
+Math.mulDiv(uint256,uint256,uint256) (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#55-134) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#101)
+	- inverse *= 2 - denominator * inverse (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#124)
+Math.mulDiv(uint256,uint256,uint256) (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#55-134) performs a multiplication on the result of a division:
+	- denominator = denominator / twos (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#101)
+	- inverse *= 2 - denominator * inverse (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#125)
+Math.mulDiv(uint256,uint256,uint256) (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#55-134) performs a multiplication on the result of a division:
+	- prod0 = prod0 / twos (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#104)
+	- result = prod0 * inverse (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#131)
+ClosePositionTest.setUp() (test/ClosePosition.t.sol#39-65) performs a multiplication on the result of a division:
+	- _tickLower = ((_tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/ClosePosition.t.sol#45)
+ClosePositionTest.setUp() (test/ClosePosition.t.sol#39-65) performs a multiplication on the result of a division:
+	- _tickUpper = ((_tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/ClosePosition.t.sol#46)
+ClosePositionTest._setupUpperOutOfRange() (test/ClosePosition.t.sol#67-84) performs a multiplication on the result of a division:
+	- _tickLower = ((_tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/ClosePosition.t.sol#68)
+ClosePositionTest._setupUpperOutOfRange() (test/ClosePosition.t.sol#67-84) performs a multiplication on the result of a division:
+	- _tickUpper = ((_tick + 2 * TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/ClosePosition.t.sol#69)
+ClosePositionTest._setupLowerOutOfRange() (test/ClosePosition.t.sol#86-103) performs a multiplication on the result of a division:
+	- _tickLower = ((_tick - 2 * TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/ClosePosition.t.sol#87)
+ClosePositionTest._setupLowerOutOfRange() (test/ClosePosition.t.sol#86-103) performs a multiplication on the result of a division:
+	- _tickUpper = ((_tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/ClosePosition.t.sol#88)
+DecreaseLiquidityTest.setUp() (test/DecreaseLiquidity.t.sol#21-40) performs a multiplication on the result of a division:
+	- tickLower = ((tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/DecreaseLiquidity.t.sol#27)
+DecreaseLiquidityTest.setUp() (test/DecreaseLiquidity.t.sol#21-40) performs a multiplication on the result of a division:
+	- tickUpper = ((tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/DecreaseLiquidity.t.sol#28)
+IncreaseLiquidityTest.setUp() (test/IncreaseLiquidity.t.sol#19-38) performs a multiplication on the result of a division:
+	- tickLower = ((tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/IncreaseLiquidity.t.sol#25)
+IncreaseLiquidityTest.setUp() (test/IncreaseLiquidity.t.sol#19-38) performs a multiplication on the result of a division:
+	- tickUpper = ((tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/IncreaseLiquidity.t.sol#26)
+LiquidationTest.setUp() (test/LiquidatePosition.t.sol#37-61) performs a multiplication on the result of a division:
+	- _tickLower = ((_tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/LiquidatePosition.t.sol#43)
+LiquidationTest.setUp() (test/LiquidatePosition.t.sol#37-61) performs a multiplication on the result of a division:
+	- _tickUpper = ((_tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/LiquidatePosition.t.sol#44)
+MintTest.testMintInRange() (test/Mint.t.sol#17-44) performs a multiplication on the result of a division:
+	- tickLower = ((tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#21)
+MintTest.testMintInRange() (test/Mint.t.sol#17-44) performs a multiplication on the result of a division:
+	- tickUpper = ((tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#22)
+MintTest.testMintOutRangeToken0() (test/Mint.t.sol#46-73) performs a multiplication on the result of a division:
+	- tickLower = ((tick - TICK_STEP * 2) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#50)
+MintTest.testMintOutRangeToken0() (test/Mint.t.sol#46-73) performs a multiplication on the result of a division:
+	- tickUpper = ((tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#51)
+MintTest.testMintOutRangeToken1() (test/Mint.t.sol#75-102) performs a multiplication on the result of a division:
+	- tickLower = ((tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#79)
+MintTest.testMintOutRangeToken1() (test/Mint.t.sol#75-102) performs a multiplication on the result of a division:
+	- tickUpper = ((tick + TICK_STEP * 2) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#80)
+MintTest.testMintNativeInRange() (test/Mint.t.sol#104-131) performs a multiplication on the result of a division:
+	- tickLower = ((tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#108)
+MintTest.testMintNativeInRange() (test/Mint.t.sol#104-131) performs a multiplication on the result of a division:
+	- tickUpper = ((tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#109)
+MintTest.testTransferPositionNft() (test/Mint.t.sol#133-159) performs a multiplication on the result of a division:
+	- tickLower = ((tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#137)
+MintTest.testTransferPositionNft() (test/Mint.t.sol#133-159) performs a multiplication on the result of a division:
+	- tickUpper = ((tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#138)
+MintTest.testMintWithSlippageAboveShouldPass() (test/Mint.t.sol#171-211) performs a multiplication on the result of a division:
+	- tickLower = ((tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#175)
+MintTest.testMintWithSlippageAboveShouldPass() (test/Mint.t.sol#171-211) performs a multiplication on the result of a division:
+	- tickUpper = ((tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#176)
+MintTest.testMintWithSlippageProtected() (test/Mint.t.sol#213-254) performs a multiplication on the result of a division:
+	- tickLower = ((tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#217)
+MintTest.testMintWithSlippageProtected() (test/Mint.t.sol#213-254) performs a multiplication on the result of a division:
+	- tickUpper = ((tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Mint.t.sol#218)
+OpenPositionTest.setUp() (test/OpenPosition.t.sol#34-64) performs a multiplication on the result of a division:
+	- _tickLower = ((_tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/OpenPosition.t.sol#40)
+OpenPositionTest.setUp() (test/OpenPosition.t.sol#34-64) performs a multiplication on the result of a division:
+	- _tickUpper = ((_tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/OpenPosition.t.sol#41)
+OpenPositionTest._setupUpperOutOfRange() (test/OpenPosition.t.sol#66-83) performs a multiplication on the result of a division:
+	- _tickLower = ((_tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/OpenPosition.t.sol#67)
+OpenPositionTest._setupUpperOutOfRange() (test/OpenPosition.t.sol#66-83) performs a multiplication on the result of a division:
+	- _tickUpper = ((_tick + 2 * TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/OpenPosition.t.sol#68)
+OpenPositionTest._setupLowerOutOfRange() (test/OpenPosition.t.sol#85-102) performs a multiplication on the result of a division:
+	- _tickLower = ((_tick - 2 * TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/OpenPosition.t.sol#86)
+OpenPositionTest._setupLowerOutOfRange() (test/OpenPosition.t.sol#85-102) performs a multiplication on the result of a division:
+	- _tickUpper = ((_tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/OpenPosition.t.sol#87)
+OpenPositionTest.testRequiredCollateralIndependentOfPrice() (test/OpenPosition.t.sol#104-115) performs a multiplication on the result of a division:
+	- tickLower = (int24(201760) / TICK_SPACING) * TICK_SPACING (test/OpenPosition.t.sol#105)
+OpenPositionTest.testRequiredCollateralIndependentOfPrice() (test/OpenPosition.t.sol#104-115) performs a multiplication on the result of a division:
+	- tickUpper = (int24(202540) / TICK_SPACING) * TICK_SPACING (test/OpenPosition.t.sol#106)
+SwapTest.setUp() (test/Swap.t.sol#30-54) performs a multiplication on the result of a division:
+	- _tickLower = ((_tick - TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Swap.t.sol#36)
+SwapTest.setUp() (test/Swap.t.sol#30-54) performs a multiplication on the result of a division:
+	- _tickUpper = ((_tick + TICK_STEP) / TICK_SPACING) * TICK_SPACING (test/Swap.t.sol#37)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#divide-before-multiply
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 52 result(s) found

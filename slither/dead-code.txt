@@ -1,0 +1,16 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.12s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+FullMath.mulDivRoundingUp(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#110-118) is never used and should be removed
+LiquidationTest._liquidateShortPosition(uint256) (test/LiquidatePosition.t.sol#215-234) is never used and should be removed
+LiquidationTest._openShortPosition() (test/LiquidatePosition.t.sol#94-123) is never used and should be removed
+LiquidationTest._prepareCloseShortPosition(uint256) (test/LiquidatePosition.t.sol#159-192) is never used and should be removed
+PoolAddress.computeAddress(address,PoolAddress.PoolKey) (contracts/libraries/PoolAddress.sol#31-47) is never used and should be removed
+PoolAddress.getPoolKey(address,address,uint24) (contracts/libraries/PoolAddress.sol#22-25) is never used and should be removed
+TickMath.getTickAtSqrtRatio(uint160) (contracts/libraries/TickMath.sol#63-206) is never used and should be removed
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#dead-code
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 7 result(s) found

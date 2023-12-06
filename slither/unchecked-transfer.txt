@@ -1,0 +1,44 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.12s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+ParticlePositionManagerTestBase.setUp() (test/Base.t.sol#54-78) ignores return value by WETH.transfer(WHALE,WETH_AMOUNT) (test/Base.t.sol#73)
+ParticlePositionManagerTestBase.setUp() (test/Base.t.sol#54-78) ignores return value by USDC.transfer(WHALE,USDC_AMOUNT) (test/Base.t.sol#75)
+ParticlePositionManagerTestBase.setUp() (test/Base.t.sol#54-78) ignores return value by DAI.transfer(WHALE,DAI_AMOUNT) (test/Base.t.sol#77)
+ParticlePositionManagerTestBase._mint(address,address,address,uint24,int24,int24,uint256,uint256) (test/Base.t.sol#97-128) ignores return value by IERC20(token0).transfer(lp,amount0) (test/Base.t.sol#108)
+ParticlePositionManagerTestBase._mint(address,address,address,uint24,int24,int24,uint256,uint256) (test/Base.t.sol#97-128) ignores return value by IERC20(token1).transfer(lp,amount1) (test/Base.t.sol#109)
+ParticlePositionManagerTestBase._mintNative(address,address,address,uint24,int24,int24,uint256,uint256) (test/Base.t.sol#130-163) ignores return value by IERC20(token0).transfer(lp,amount0) (test/Base.t.sol#141)
+ParticlePositionManagerTestBase._mintNative(address,address,address,uint24,int24,int24,uint256,uint256) (test/Base.t.sol#130-163) ignores return value by IERC20(token1).transfer(lp,amount1) (test/Base.t.sol#142)
+ParticlePositionManagerTestBase._borrowToLong(address,address,uint256,uint256,uint256,uint128) (test/Base.t.sol#165-219) ignores return value by IERC20(tokenFrom).transfer(swapper,amountFrom) (test/Base.t.sol#199)
+ParticlePositionManagerTestBase._directLong(address,address,uint256,uint256,uint256,uint128) (test/Base.t.sol#221-275) ignores return value by IERC20(tokenTo).transfer(swapper,amountTo) (test/Base.t.sol#253)
+ParticlePositionManagerTestBase._directLong(address,address,uint256,uint256,uint256,uint128) (test/Base.t.sol#221-275) ignores return value by IERC20(token0).transfer(swapper,feeFrom) (test/Base.t.sol#254)
+ParticlePositionManagerTestBase._borrowToShort(address,address,uint256,uint256,uint256,uint128) (test/Base.t.sol#277-328) ignores return value by IERC20(tokenFrom).transfer(swapper,amountFrom) (test/Base.t.sol#308)
+ParticlePositionManagerTestBase._directShort(address,address,uint256,uint256,uint256,uint128) (test/Base.t.sol#330-382) ignores return value by IERC20(tokenTo).transfer(swapper,amountTo) (test/Base.t.sol#360)
+ParticlePositionManagerTestBase._directShort(address,address,uint256,uint256,uint256,uint128) (test/Base.t.sol#330-382) ignores return value by IERC20(token1).transfer(swapper,feeFrom) (test/Base.t.sol#361)
+ClosePositionTest._addPremium(uint96,uint128,uint128) (test/ClosePosition.t.sol#300-311) ignores return value by USDC.transfer(SWAPPER,premium0) (test/ClosePosition.t.sol#302)
+ClosePositionTest._addPremium(uint96,uint128,uint128) (test/ClosePosition.t.sol#300-311) ignores return value by WETH.transfer(SWAPPER,premium1) (test/ClosePosition.t.sol#303)
+DecreaseLiquidityTest.testMintIncreaseDecreaseAllLiquidity() (test/DecreaseLiquidity.t.sol#83-121) ignores return value by USDC.transfer(LP,INCREASE_AMOUNT_0) (test/DecreaseLiquidity.t.sol#85)
+DecreaseLiquidityTest.testMintIncreaseDecreaseAllLiquidity() (test/DecreaseLiquidity.t.sol#83-121) ignores return value by WETH.transfer(LP,INCREASE_AMOUNT_1) (test/DecreaseLiquidity.t.sol#86)
+IncreaseLiquidityTest.testIncreaseLiquidity() (test/IncreaseLiquidity.t.sol#40-63) ignores return value by USDC.transfer(LP,INCREASE_AMOUNT_0) (test/IncreaseLiquidity.t.sol#44)
+IncreaseLiquidityTest.testIncreaseLiquidity() (test/IncreaseLiquidity.t.sol#40-63) ignores return value by WETH.transfer(LP,INCREASE_AMOUNT_1) (test/IncreaseLiquidity.t.sol#45)
+IncreaseLiquidityTest.testCannotIncreaseNonOwnerLiquidity() (test/IncreaseLiquidity.t.sol#65-80) ignores return value by USDC.transfer(lp2,INCREASE_AMOUNT_0) (test/IncreaseLiquidity.t.sol#69)
+IncreaseLiquidityTest.testCannotIncreaseNonOwnerLiquidity() (test/IncreaseLiquidity.t.sol#65-80) ignores return value by WETH.transfer(lp2,INCREASE_AMOUNT_1) (test/IncreaseLiquidity.t.sol#70)
+LiquidationTest._addPremium(uint128,uint128) (test/LiquidatePosition.t.sol#236-247) ignores return value by USDC.transfer(SWAPPER,premium0) (test/LiquidatePosition.t.sol#238)
+LiquidationTest._addPremium(uint128,uint128) (test/LiquidatePosition.t.sol#236-247) ignores return value by WETH.transfer(SWAPPER,premium1) (test/LiquidatePosition.t.sol#239)
+LiquidationTest.testCannotOverAddPremium() (test/LiquidatePosition.t.sol#289-300) ignores return value by USDC.transfer(SWAPPER,PREMIUM_0) (test/LiquidatePosition.t.sol#292)
+MintTest.testMintWithSlippageAboveShouldPass() (test/Mint.t.sol#171-211) ignores return value by IERC20(USDC).transfer(LP,MINT_AMOUNT_0) (test/Mint.t.sol#190)
+MintTest.testMintWithSlippageAboveShouldPass() (test/Mint.t.sol#171-211) ignores return value by IERC20(WETH).transfer(LP,MINT_AMOUNT_1) (test/Mint.t.sol#191)
+MintTest.testMintWithSlippageProtected() (test/Mint.t.sol#213-254) ignores return value by IERC20(USDC).transfer(LP,MINT_AMOUNT_0) (test/Mint.t.sol#232)
+MintTest.testMintWithSlippageProtected() (test/Mint.t.sol#213-254) ignores return value by IERC20(WETH).transfer(LP,MINT_AMOUNT_1) (test/Mint.t.sol#233)
+OpenPositionTest.testCannotOverSpendByDepositingLess() (test/OpenPosition.t.sol#183-239) ignores return value by USDC.transfer(SWAPPER,amountIn) (test/OpenPosition.t.sol#205)
+OpenPositionTest.testCannotUnderLeverageByDepositingTooMuch() (test/OpenPosition.t.sol#261-327) ignores return value by USDC.transfer(SWAPPER,amountIn) (test/OpenPosition.t.sol#306)
+OpenPositionTest.testCannotSwapToOtherRecipient() (test/OpenPosition.t.sol#407-462) ignores return value by USDC.transfer(SWAPPER,amountIn) (test/OpenPosition.t.sol#428)
+OpenPositionTest.testCannotOpenWithInsufficientPremium() (test/OpenPosition.t.sol#464-524) ignores return value by USDC.transfer(SWAPPER,amountIn) (test/OpenPosition.t.sol#503)
+SwapTest._swap() (test/Swap.t.sol#56-77) ignores return value by USDC.transfer(SWAPPER,USDC_AMOUNT_IN) (test/Swap.t.sol#58)
+SwapTest.testTransientSwapCannotOverspendData() (test/Swap.t.sol#96-118) ignores return value by USDC.transfer(SWAPPER,USDC_AMOUNT_IN) (test/Swap.t.sol#98)
+SwapTest.testComposePositionAmountIsCorrect() (test/Swap.t.sol#120-187) ignores return value by USDC.transfer(SWAPPER,USDC_AMOUNT_IN + amountInWithFee) (test/Swap.t.sol#177)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#unchecked-transfer
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 35 result(s) found

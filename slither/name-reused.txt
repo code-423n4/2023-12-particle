@@ -1,0 +1,15 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.15s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+INonfungiblePositionManager is re-used:
+	- INonfungiblePositionManager (contracts/interfaces/INonFungiblePositionManager.sol#19-172)
+	- INonfungiblePositionManager (contracts/interfaces/INonfungiblePositionManager.sol#19-172)
+console is re-used:
+	- console (lib/forge-std/src/Console.sol#4-1534)
+	- console (lib/forge-std/src/console.sol#4-1534)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#name-reused
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 2 result(s) found

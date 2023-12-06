@@ -1,0 +1,1157 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.06s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+FullMath.mulDiv(uint256,uint256,uint256) (contracts/libraries/FullMath.sol#15-103) uses assembly
+	- INLINE ASM (contracts/libraries/FullMath.sol#24-27)
+	- INLINE ASM (contracts/libraries/FullMath.sol#35-37)
+	- INLINE ASM (contracts/libraries/FullMath.sol#48-50)
+	- INLINE ASM (contracts/libraries/FullMath.sol#52-55)
+	- INLINE ASM (contracts/libraries/FullMath.sol#62-64)
+	- INLINE ASM (contracts/libraries/FullMath.sol#67-69)
+	- INLINE ASM (contracts/libraries/FullMath.sol#73-75)
+TickMath.getTickAtSqrtRatio(uint160) (contracts/libraries/TickMath.sol#63-206) uses assembly
+	- INLINE ASM (contracts/libraries/TickMath.sol#71-75)
+	- INLINE ASM (contracts/libraries/TickMath.sol#76-80)
+	- INLINE ASM (contracts/libraries/TickMath.sol#81-85)
+	- INLINE ASM (contracts/libraries/TickMath.sol#86-90)
+	- INLINE ASM (contracts/libraries/TickMath.sol#91-95)
+	- INLINE ASM (contracts/libraries/TickMath.sol#96-100)
+	- INLINE ASM (contracts/libraries/TickMath.sol#101-105)
+	- INLINE ASM (contracts/libraries/TickMath.sol#106-109)
+	- INLINE ASM (contracts/libraries/TickMath.sol#116-121)
+	- INLINE ASM (contracts/libraries/TickMath.sol#122-127)
+	- INLINE ASM (contracts/libraries/TickMath.sol#128-133)
+	- INLINE ASM (contracts/libraries/TickMath.sol#134-139)
+	- INLINE ASM (contracts/libraries/TickMath.sol#140-145)
+	- INLINE ASM (contracts/libraries/TickMath.sol#146-151)
+	- INLINE ASM (contracts/libraries/TickMath.sol#152-157)
+	- INLINE ASM (contracts/libraries/TickMath.sol#158-163)
+	- INLINE ASM (contracts/libraries/TickMath.sol#164-169)
+	- INLINE ASM (contracts/libraries/TickMath.sol#170-175)
+	- INLINE ASM (contracts/libraries/TickMath.sol#176-181)
+	- INLINE ASM (contracts/libraries/TickMath.sol#182-187)
+	- INLINE ASM (contracts/libraries/TickMath.sol#188-193)
+	- INLINE ASM (contracts/libraries/TickMath.sol#194-198)
+DSTest.hasHEVMContext() (lib/forge-std/lib/ds-test/src/test.sol#78-84) uses assembly
+	- INLINE ASM (lib/forge-std/lib/ds-test/src/test.sol#80-82)
+console._sendLogPayload(bytes) (lib/forge-std/src/Console.sol#7-15) uses assembly
+	- INLINE ASM (lib/forge-std/src/Console.sol#11-14)
+StdChains.getChainWithUpdatedRpcUrl(string,StdChains.Chain) (lib/forge-std/src/StdChains.sol#151-174) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdChains.sol#167-169)
+StdCheatsSafe.assumeNotBlacklisted(address,address) (lib/forge-std/src/StdCheats.sol#209-227) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdCheats.sol#212-214)
+StdCheatsSafe.deployCode(string,bytes) (lib/forge-std/src/StdCheats.sol#490-498) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdCheats.sol#493-495)
+StdCheatsSafe.deployCode(string) (lib/forge-std/src/StdCheats.sol#500-508) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdCheats.sol#503-505)
+StdCheatsSafe.deployCode(string,bytes,uint256) (lib/forge-std/src/StdCheats.sol#511-519) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdCheats.sol#514-516)
+StdCheatsSafe.deployCode(string,uint256) (lib/forge-std/src/StdCheats.sol#521-529) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdCheats.sol#524-526)
+StdCheatsSafe._viewChainId() (lib/forge-std/src/StdCheats.sol#619-626) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdCheats.sol#621-623)
+StdCheatsSafe._pureChainId() (lib/forge-std/src/StdCheats.sol#628-635) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdCheats.sol#631-633)
+stdStorageSafe.flatten(bytes32[]) (lib/forge-std/src/StdStorage.sol#220-231) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdStorage.sol#225-227)
+stdStorage.checked_write(StdStorage,bool) (lib/forge-std/src/StdStorage.sol#285-292) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdStorage.sol#288-290)
+stdStorage.flatten(bytes32[]) (lib/forge-std/src/StdStorage.sol#366-377) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdStorage.sol#371-373)
+StdUtils.getTokenBalances(address,address[]) (lib/forge-std/src/StdUtils.sol#150-177) uses assembly
+	- INLINE ASM (lib/forge-std/src/StdUtils.sol#156-158)
+console._sendLogPayload(bytes) (lib/forge-std/src/console.sol#7-15) uses assembly
+	- INLINE ASM (lib/forge-std/src/console.sol#11-14)
+console2._castLogPayloadViewToPure(function(bytes)) (lib/forge-std/src/console2.sol#12-18) uses assembly
+	- INLINE ASM (lib/forge-std/src/console2.sol#15-17)
+console2._sendLogPayloadView(bytes) (lib/forge-std/src/console2.sol#24-32) uses assembly
+	- INLINE ASM (lib/forge-std/src/console2.sol#28-31)
+safeconsole._sendLogPayload(uint256,uint256) (lib/forge-std/src/safeconsole.sol#11-18) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#14-16)
+safeconsole._sendLogPayloadView(uint256,uint256) (lib/forge-std/src/safeconsole.sol#20-24) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#21-23)
+safeconsole._memcopy(uint256,uint256,uint256) (lib/forge-std/src/safeconsole.sol#26-33) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#29-31)
+safeconsole._memcopyView(uint256,uint256,uint256) (lib/forge-std/src/safeconsole.sol#35-39) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#36-38)
+safeconsole.logMemory(uint256,uint256) (lib/forge-std/src/safeconsole.sol#41-88) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#47-55)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#57-61)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#68-72)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#74-79)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#82-86)
+safeconsole.log(address) (lib/forge-std/src/safeconsole.sol#90-105) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#93-99)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#101-104)
+safeconsole.log(bool) (lib/forge-std/src/safeconsole.sol#107-122) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#110-116)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#118-121)
+safeconsole.log(uint256) (lib/forge-std/src/safeconsole.sol#124-139) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#127-133)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#135-138)
+safeconsole.log(bytes32) (lib/forge-std/src/safeconsole.sol#141-170) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#146-162)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#164-169)
+safeconsole.log(address,address) (lib/forge-std/src/safeconsole.sol#172-191) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#176-184)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#186-190)
+safeconsole.log(address,bool) (lib/forge-std/src/safeconsole.sol#193-212) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#197-205)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#207-211)
+safeconsole.log(address,uint256) (lib/forge-std/src/safeconsole.sol#214-233) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#218-226)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#228-232)
+safeconsole.log(address,bytes32) (lib/forge-std/src/safeconsole.sol#235-268) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#241-259)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#261-267)
+safeconsole.log(bool,address) (lib/forge-std/src/safeconsole.sol#270-289) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#274-282)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#284-288)
+safeconsole.log(bool,bool) (lib/forge-std/src/safeconsole.sol#291-310) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#295-303)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#305-309)
+safeconsole.log(bool,uint256) (lib/forge-std/src/safeconsole.sol#312-331) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#316-324)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#326-330)
+safeconsole.log(bool,bytes32) (lib/forge-std/src/safeconsole.sol#333-366) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#339-357)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#359-365)
+safeconsole.log(uint256,address) (lib/forge-std/src/safeconsole.sol#368-387) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#372-380)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#382-386)
+safeconsole.log(uint256,bool) (lib/forge-std/src/safeconsole.sol#389-408) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#393-401)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#403-407)
+safeconsole.log(uint256,uint256) (lib/forge-std/src/safeconsole.sol#410-429) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#414-422)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#424-428)
+safeconsole.log(uint256,bytes32) (lib/forge-std/src/safeconsole.sol#431-464) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#437-455)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#457-463)
+safeconsole.log(bytes32,address) (lib/forge-std/src/safeconsole.sol#466-499) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#472-490)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#492-498)
+safeconsole.log(bytes32,bool) (lib/forge-std/src/safeconsole.sol#501-534) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#507-525)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#527-533)
+safeconsole.log(bytes32,uint256) (lib/forge-std/src/safeconsole.sol#536-569) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#542-560)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#562-568)
+safeconsole.log(bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#571-611) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#579-600)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#602-610)
+safeconsole.log(address,address,address) (lib/forge-std/src/safeconsole.sol#613-636) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#618-628)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#630-635)
+safeconsole.log(address,address,bool) (lib/forge-std/src/safeconsole.sol#638-661) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#643-653)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#655-660)
+safeconsole.log(address,address,uint256) (lib/forge-std/src/safeconsole.sol#663-686) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#668-678)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#680-685)
+safeconsole.log(address,address,bytes32) (lib/forge-std/src/safeconsole.sol#688-725) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#695-715)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#717-724)
+safeconsole.log(address,bool,address) (lib/forge-std/src/safeconsole.sol#727-750) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#732-742)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#744-749)
+safeconsole.log(address,bool,bool) (lib/forge-std/src/safeconsole.sol#752-775) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#757-767)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#769-774)
+safeconsole.log(address,bool,uint256) (lib/forge-std/src/safeconsole.sol#777-800) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#782-792)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#794-799)
+safeconsole.log(address,bool,bytes32) (lib/forge-std/src/safeconsole.sol#802-839) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#809-829)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#831-838)
+safeconsole.log(address,uint256,address) (lib/forge-std/src/safeconsole.sol#841-864) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#846-856)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#858-863)
+safeconsole.log(address,uint256,bool) (lib/forge-std/src/safeconsole.sol#866-889) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#871-881)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#883-888)
+safeconsole.log(address,uint256,uint256) (lib/forge-std/src/safeconsole.sol#891-914) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#896-906)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#908-913)
+safeconsole.log(address,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#916-953) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#923-943)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#945-952)
+safeconsole.log(address,bytes32,address) (lib/forge-std/src/safeconsole.sol#955-992) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#962-982)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#984-991)
+safeconsole.log(address,bytes32,bool) (lib/forge-std/src/safeconsole.sol#994-1031) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1001-1021)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1023-1030)
+safeconsole.log(address,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#1033-1070) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1040-1060)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1062-1069)
+safeconsole.log(address,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#1072-1116) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1081-1104)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1106-1115)
+safeconsole.log(bool,address,address) (lib/forge-std/src/safeconsole.sol#1118-1141) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1123-1133)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1135-1140)
+safeconsole.log(bool,address,bool) (lib/forge-std/src/safeconsole.sol#1143-1166) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1148-1158)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1160-1165)
+safeconsole.log(bool,address,uint256) (lib/forge-std/src/safeconsole.sol#1168-1191) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1173-1183)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1185-1190)
+safeconsole.log(bool,address,bytes32) (lib/forge-std/src/safeconsole.sol#1193-1230) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1200-1220)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1222-1229)
+safeconsole.log(bool,bool,address) (lib/forge-std/src/safeconsole.sol#1232-1255) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1237-1247)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1249-1254)
+safeconsole.log(bool,bool,bool) (lib/forge-std/src/safeconsole.sol#1257-1280) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1262-1272)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1274-1279)
+safeconsole.log(bool,bool,uint256) (lib/forge-std/src/safeconsole.sol#1282-1305) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1287-1297)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1299-1304)
+safeconsole.log(bool,bool,bytes32) (lib/forge-std/src/safeconsole.sol#1307-1344) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1314-1334)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1336-1343)
+safeconsole.log(bool,uint256,address) (lib/forge-std/src/safeconsole.sol#1346-1369) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1351-1361)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1363-1368)
+safeconsole.log(bool,uint256,bool) (lib/forge-std/src/safeconsole.sol#1371-1394) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1376-1386)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1388-1393)
+safeconsole.log(bool,uint256,uint256) (lib/forge-std/src/safeconsole.sol#1396-1419) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1401-1411)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1413-1418)
+safeconsole.log(bool,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#1421-1458) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1428-1448)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1450-1457)
+safeconsole.log(bool,bytes32,address) (lib/forge-std/src/safeconsole.sol#1460-1497) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1467-1487)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1489-1496)
+safeconsole.log(bool,bytes32,bool) (lib/forge-std/src/safeconsole.sol#1499-1536) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1506-1526)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1528-1535)
+safeconsole.log(bool,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#1538-1575) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1545-1565)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1567-1574)
+safeconsole.log(bool,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#1577-1621) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1586-1609)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1611-1620)
+safeconsole.log(uint256,address,address) (lib/forge-std/src/safeconsole.sol#1623-1646) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1628-1638)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1640-1645)
+safeconsole.log(uint256,address,bool) (lib/forge-std/src/safeconsole.sol#1648-1671) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1653-1663)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1665-1670)
+safeconsole.log(uint256,address,uint256) (lib/forge-std/src/safeconsole.sol#1673-1696) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1678-1688)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1690-1695)
+safeconsole.log(uint256,address,bytes32) (lib/forge-std/src/safeconsole.sol#1698-1735) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1705-1725)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1727-1734)
+safeconsole.log(uint256,bool,address) (lib/forge-std/src/safeconsole.sol#1737-1760) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1742-1752)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1754-1759)
+safeconsole.log(uint256,bool,bool) (lib/forge-std/src/safeconsole.sol#1762-1785) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1767-1777)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1779-1784)
+safeconsole.log(uint256,bool,uint256) (lib/forge-std/src/safeconsole.sol#1787-1810) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1792-1802)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1804-1809)
+safeconsole.log(uint256,bool,bytes32) (lib/forge-std/src/safeconsole.sol#1812-1849) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1819-1839)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1841-1848)
+safeconsole.log(uint256,uint256,address) (lib/forge-std/src/safeconsole.sol#1851-1874) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1856-1866)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1868-1873)
+safeconsole.log(uint256,uint256,bool) (lib/forge-std/src/safeconsole.sol#1876-1899) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1881-1891)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1893-1898)
+safeconsole.log(uint256,uint256,uint256) (lib/forge-std/src/safeconsole.sol#1901-1924) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1906-1916)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1918-1923)
+safeconsole.log(uint256,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#1926-1963) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1933-1953)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1955-1962)
+safeconsole.log(uint256,bytes32,address) (lib/forge-std/src/safeconsole.sol#1965-2002) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1972-1992)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#1994-2001)
+safeconsole.log(uint256,bytes32,bool) (lib/forge-std/src/safeconsole.sol#2004-2041) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2011-2031)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2033-2040)
+safeconsole.log(uint256,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#2043-2080) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2050-2070)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2072-2079)
+safeconsole.log(uint256,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#2082-2126) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2091-2114)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2116-2125)
+safeconsole.log(bytes32,address,address) (lib/forge-std/src/safeconsole.sol#2128-2165) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2135-2155)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2157-2164)
+safeconsole.log(bytes32,address,bool) (lib/forge-std/src/safeconsole.sol#2167-2204) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2174-2194)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2196-2203)
+safeconsole.log(bytes32,address,uint256) (lib/forge-std/src/safeconsole.sol#2206-2243) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2213-2233)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2235-2242)
+safeconsole.log(bytes32,address,bytes32) (lib/forge-std/src/safeconsole.sol#2245-2289) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2254-2277)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2279-2288)
+safeconsole.log(bytes32,bool,address) (lib/forge-std/src/safeconsole.sol#2291-2328) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2298-2318)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2320-2327)
+safeconsole.log(bytes32,bool,bool) (lib/forge-std/src/safeconsole.sol#2330-2367) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2337-2357)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2359-2366)
+safeconsole.log(bytes32,bool,uint256) (lib/forge-std/src/safeconsole.sol#2369-2406) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2376-2396)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2398-2405)
+safeconsole.log(bytes32,bool,bytes32) (lib/forge-std/src/safeconsole.sol#2408-2452) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2417-2440)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2442-2451)
+safeconsole.log(bytes32,uint256,address) (lib/forge-std/src/safeconsole.sol#2454-2491) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2461-2481)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2483-2490)
+safeconsole.log(bytes32,uint256,bool) (lib/forge-std/src/safeconsole.sol#2493-2530) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2500-2520)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2522-2529)
+safeconsole.log(bytes32,uint256,uint256) (lib/forge-std/src/safeconsole.sol#2532-2569) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2539-2559)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2561-2568)
+safeconsole.log(bytes32,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#2571-2615) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2580-2603)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2605-2614)
+safeconsole.log(bytes32,bytes32,address) (lib/forge-std/src/safeconsole.sol#2617-2661) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2626-2649)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2651-2660)
+safeconsole.log(bytes32,bytes32,bool) (lib/forge-std/src/safeconsole.sol#2663-2707) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2672-2695)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2697-2706)
+safeconsole.log(bytes32,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#2709-2753) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2718-2741)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2743-2752)
+safeconsole.log(bytes32,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#2755-2806) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2766-2792)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2794-2805)
+safeconsole.log(address,address,address,address) (lib/forge-std/src/safeconsole.sol#2808-2835) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2814-2826)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2828-2834)
+safeconsole.log(address,address,address,bool) (lib/forge-std/src/safeconsole.sol#2837-2864) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2843-2855)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2857-2863)
+safeconsole.log(address,address,address,uint256) (lib/forge-std/src/safeconsole.sol#2866-2893) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2872-2884)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2886-2892)
+safeconsole.log(address,address,address,bytes32) (lib/forge-std/src/safeconsole.sol#2895-2936) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2903-2925)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2927-2935)
+safeconsole.log(address,address,bool,address) (lib/forge-std/src/safeconsole.sol#2938-2965) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2944-2956)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2958-2964)
+safeconsole.log(address,address,bool,bool) (lib/forge-std/src/safeconsole.sol#2967-2994) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2973-2985)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#2987-2993)
+safeconsole.log(address,address,bool,uint256) (lib/forge-std/src/safeconsole.sol#2996-3023) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3002-3014)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3016-3022)
+safeconsole.log(address,address,bool,bytes32) (lib/forge-std/src/safeconsole.sol#3025-3066) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3033-3055)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3057-3065)
+safeconsole.log(address,address,uint256,address) (lib/forge-std/src/safeconsole.sol#3068-3095) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3074-3086)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3088-3094)
+safeconsole.log(address,address,uint256,bool) (lib/forge-std/src/safeconsole.sol#3097-3124) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3103-3115)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3117-3123)
+safeconsole.log(address,address,uint256,uint256) (lib/forge-std/src/safeconsole.sol#3126-3153) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3132-3144)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3146-3152)
+safeconsole.log(address,address,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#3155-3196) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3163-3185)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3187-3195)
+safeconsole.log(address,address,bytes32,address) (lib/forge-std/src/safeconsole.sol#3198-3239) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3206-3228)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3230-3238)
+safeconsole.log(address,address,bytes32,bool) (lib/forge-std/src/safeconsole.sol#3241-3282) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3249-3271)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3273-3281)
+safeconsole.log(address,address,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#3284-3325) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3292-3314)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3316-3324)
+safeconsole.log(address,address,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#3327-3375) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3337-3362)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3364-3374)
+safeconsole.log(address,bool,address,address) (lib/forge-std/src/safeconsole.sol#3377-3404) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3383-3395)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3397-3403)
+safeconsole.log(address,bool,address,bool) (lib/forge-std/src/safeconsole.sol#3406-3433) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3412-3424)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3426-3432)
+safeconsole.log(address,bool,address,uint256) (lib/forge-std/src/safeconsole.sol#3435-3462) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3441-3453)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3455-3461)
+safeconsole.log(address,bool,address,bytes32) (lib/forge-std/src/safeconsole.sol#3464-3505) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3472-3494)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3496-3504)
+safeconsole.log(address,bool,bool,address) (lib/forge-std/src/safeconsole.sol#3507-3534) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3513-3525)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3527-3533)
+safeconsole.log(address,bool,bool,bool) (lib/forge-std/src/safeconsole.sol#3536-3563) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3542-3554)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3556-3562)
+safeconsole.log(address,bool,bool,uint256) (lib/forge-std/src/safeconsole.sol#3565-3592) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3571-3583)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3585-3591)
+safeconsole.log(address,bool,bool,bytes32) (lib/forge-std/src/safeconsole.sol#3594-3635) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3602-3624)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3626-3634)
+safeconsole.log(address,bool,uint256,address) (lib/forge-std/src/safeconsole.sol#3637-3664) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3643-3655)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3657-3663)
+safeconsole.log(address,bool,uint256,bool) (lib/forge-std/src/safeconsole.sol#3666-3693) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3672-3684)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3686-3692)
+safeconsole.log(address,bool,uint256,uint256) (lib/forge-std/src/safeconsole.sol#3695-3722) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3701-3713)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3715-3721)
+safeconsole.log(address,bool,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#3724-3765) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3732-3754)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3756-3764)
+safeconsole.log(address,bool,bytes32,address) (lib/forge-std/src/safeconsole.sol#3767-3808) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3775-3797)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3799-3807)
+safeconsole.log(address,bool,bytes32,bool) (lib/forge-std/src/safeconsole.sol#3810-3851) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3818-3840)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3842-3850)
+safeconsole.log(address,bool,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#3853-3894) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3861-3883)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3885-3893)
+safeconsole.log(address,bool,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#3896-3944) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3906-3931)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3933-3943)
+safeconsole.log(address,uint256,address,address) (lib/forge-std/src/safeconsole.sol#3946-3973) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3952-3964)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3966-3972)
+safeconsole.log(address,uint256,address,bool) (lib/forge-std/src/safeconsole.sol#3975-4002) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3981-3993)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#3995-4001)
+safeconsole.log(address,uint256,address,uint256) (lib/forge-std/src/safeconsole.sol#4004-4031) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4010-4022)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4024-4030)
+safeconsole.log(address,uint256,address,bytes32) (lib/forge-std/src/safeconsole.sol#4033-4074) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4041-4063)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4065-4073)
+safeconsole.log(address,uint256,bool,address) (lib/forge-std/src/safeconsole.sol#4076-4103) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4082-4094)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4096-4102)
+safeconsole.log(address,uint256,bool,bool) (lib/forge-std/src/safeconsole.sol#4105-4132) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4111-4123)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4125-4131)
+safeconsole.log(address,uint256,bool,uint256) (lib/forge-std/src/safeconsole.sol#4134-4161) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4140-4152)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4154-4160)
+safeconsole.log(address,uint256,bool,bytes32) (lib/forge-std/src/safeconsole.sol#4163-4204) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4171-4193)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4195-4203)
+safeconsole.log(address,uint256,uint256,address) (lib/forge-std/src/safeconsole.sol#4206-4233) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4212-4224)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4226-4232)
+safeconsole.log(address,uint256,uint256,bool) (lib/forge-std/src/safeconsole.sol#4235-4262) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4241-4253)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4255-4261)
+safeconsole.log(address,uint256,uint256,uint256) (lib/forge-std/src/safeconsole.sol#4264-4291) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4270-4282)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4284-4290)
+safeconsole.log(address,uint256,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#4293-4334) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4301-4323)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4325-4333)
+safeconsole.log(address,uint256,bytes32,address) (lib/forge-std/src/safeconsole.sol#4336-4377) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4344-4366)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4368-4376)
+safeconsole.log(address,uint256,bytes32,bool) (lib/forge-std/src/safeconsole.sol#4379-4420) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4387-4409)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4411-4419)
+safeconsole.log(address,uint256,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#4422-4463) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4430-4452)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4454-4462)
+safeconsole.log(address,uint256,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#4465-4513) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4475-4500)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4502-4512)
+safeconsole.log(address,bytes32,address,address) (lib/forge-std/src/safeconsole.sol#4515-4556) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4523-4545)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4547-4555)
+safeconsole.log(address,bytes32,address,bool) (lib/forge-std/src/safeconsole.sol#4558-4599) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4566-4588)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4590-4598)
+safeconsole.log(address,bytes32,address,uint256) (lib/forge-std/src/safeconsole.sol#4601-4642) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4609-4631)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4633-4641)
+safeconsole.log(address,bytes32,address,bytes32) (lib/forge-std/src/safeconsole.sol#4644-4692) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4654-4679)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4681-4691)
+safeconsole.log(address,bytes32,bool,address) (lib/forge-std/src/safeconsole.sol#4694-4735) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4702-4724)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4726-4734)
+safeconsole.log(address,bytes32,bool,bool) (lib/forge-std/src/safeconsole.sol#4737-4778) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4745-4767)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4769-4777)
+safeconsole.log(address,bytes32,bool,uint256) (lib/forge-std/src/safeconsole.sol#4780-4821) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4788-4810)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4812-4820)
+safeconsole.log(address,bytes32,bool,bytes32) (lib/forge-std/src/safeconsole.sol#4823-4871) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4833-4858)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4860-4870)
+safeconsole.log(address,bytes32,uint256,address) (lib/forge-std/src/safeconsole.sol#4873-4914) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4881-4903)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4905-4913)
+safeconsole.log(address,bytes32,uint256,bool) (lib/forge-std/src/safeconsole.sol#4916-4957) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4924-4946)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4948-4956)
+safeconsole.log(address,bytes32,uint256,uint256) (lib/forge-std/src/safeconsole.sol#4959-5000) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4967-4989)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#4991-4999)
+safeconsole.log(address,bytes32,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#5002-5050) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5012-5037)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5039-5049)
+safeconsole.log(address,bytes32,bytes32,address) (lib/forge-std/src/safeconsole.sol#5052-5100) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5062-5087)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5089-5099)
+safeconsole.log(address,bytes32,bytes32,bool) (lib/forge-std/src/safeconsole.sol#5102-5150) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5112-5137)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5139-5149)
+safeconsole.log(address,bytes32,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#5152-5200) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5162-5187)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5189-5199)
+safeconsole.log(address,bytes32,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#5202-5257) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5214-5242)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5244-5256)
+safeconsole.log(bool,address,address,address) (lib/forge-std/src/safeconsole.sol#5259-5286) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5265-5277)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5279-5285)
+safeconsole.log(bool,address,address,bool) (lib/forge-std/src/safeconsole.sol#5288-5315) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5294-5306)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5308-5314)
+safeconsole.log(bool,address,address,uint256) (lib/forge-std/src/safeconsole.sol#5317-5344) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5323-5335)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5337-5343)
+safeconsole.log(bool,address,address,bytes32) (lib/forge-std/src/safeconsole.sol#5346-5387) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5354-5376)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5378-5386)
+safeconsole.log(bool,address,bool,address) (lib/forge-std/src/safeconsole.sol#5389-5416) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5395-5407)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5409-5415)
+safeconsole.log(bool,address,bool,bool) (lib/forge-std/src/safeconsole.sol#5418-5445) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5424-5436)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5438-5444)
+safeconsole.log(bool,address,bool,uint256) (lib/forge-std/src/safeconsole.sol#5447-5474) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5453-5465)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5467-5473)
+safeconsole.log(bool,address,bool,bytes32) (lib/forge-std/src/safeconsole.sol#5476-5517) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5484-5506)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5508-5516)
+safeconsole.log(bool,address,uint256,address) (lib/forge-std/src/safeconsole.sol#5519-5546) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5525-5537)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5539-5545)
+safeconsole.log(bool,address,uint256,bool) (lib/forge-std/src/safeconsole.sol#5548-5575) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5554-5566)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5568-5574)
+safeconsole.log(bool,address,uint256,uint256) (lib/forge-std/src/safeconsole.sol#5577-5604) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5583-5595)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5597-5603)
+safeconsole.log(bool,address,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#5606-5647) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5614-5636)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5638-5646)
+safeconsole.log(bool,address,bytes32,address) (lib/forge-std/src/safeconsole.sol#5649-5690) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5657-5679)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5681-5689)
+safeconsole.log(bool,address,bytes32,bool) (lib/forge-std/src/safeconsole.sol#5692-5733) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5700-5722)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5724-5732)
+safeconsole.log(bool,address,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#5735-5776) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5743-5765)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5767-5775)
+safeconsole.log(bool,address,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#5778-5826) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5788-5813)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5815-5825)
+safeconsole.log(bool,bool,address,address) (lib/forge-std/src/safeconsole.sol#5828-5855) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5834-5846)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5848-5854)
+safeconsole.log(bool,bool,address,bool) (lib/forge-std/src/safeconsole.sol#5857-5884) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5863-5875)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5877-5883)
+safeconsole.log(bool,bool,address,uint256) (lib/forge-std/src/safeconsole.sol#5886-5913) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5892-5904)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5906-5912)
+safeconsole.log(bool,bool,address,bytes32) (lib/forge-std/src/safeconsole.sol#5915-5956) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5923-5945)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5947-5955)
+safeconsole.log(bool,bool,bool,address) (lib/forge-std/src/safeconsole.sol#5958-5985) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5964-5976)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5978-5984)
+safeconsole.log(bool,bool,bool,bool) (lib/forge-std/src/safeconsole.sol#5987-6014) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#5993-6005)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6007-6013)
+safeconsole.log(bool,bool,bool,uint256) (lib/forge-std/src/safeconsole.sol#6016-6043) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6022-6034)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6036-6042)
+safeconsole.log(bool,bool,bool,bytes32) (lib/forge-std/src/safeconsole.sol#6045-6086) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6053-6075)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6077-6085)
+safeconsole.log(bool,bool,uint256,address) (lib/forge-std/src/safeconsole.sol#6088-6115) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6094-6106)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6108-6114)
+safeconsole.log(bool,bool,uint256,bool) (lib/forge-std/src/safeconsole.sol#6117-6144) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6123-6135)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6137-6143)
+safeconsole.log(bool,bool,uint256,uint256) (lib/forge-std/src/safeconsole.sol#6146-6173) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6152-6164)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6166-6172)
+safeconsole.log(bool,bool,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#6175-6216) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6183-6205)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6207-6215)
+safeconsole.log(bool,bool,bytes32,address) (lib/forge-std/src/safeconsole.sol#6218-6259) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6226-6248)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6250-6258)
+safeconsole.log(bool,bool,bytes32,bool) (lib/forge-std/src/safeconsole.sol#6261-6302) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6269-6291)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6293-6301)
+safeconsole.log(bool,bool,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#6304-6345) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6312-6334)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6336-6344)
+safeconsole.log(bool,bool,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#6347-6395) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6357-6382)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6384-6394)
+safeconsole.log(bool,uint256,address,address) (lib/forge-std/src/safeconsole.sol#6397-6424) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6403-6415)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6417-6423)
+safeconsole.log(bool,uint256,address,bool) (lib/forge-std/src/safeconsole.sol#6426-6453) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6432-6444)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6446-6452)
+safeconsole.log(bool,uint256,address,uint256) (lib/forge-std/src/safeconsole.sol#6455-6482) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6461-6473)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6475-6481)
+safeconsole.log(bool,uint256,address,bytes32) (lib/forge-std/src/safeconsole.sol#6484-6525) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6492-6514)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6516-6524)
+safeconsole.log(bool,uint256,bool,address) (lib/forge-std/src/safeconsole.sol#6527-6554) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6533-6545)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6547-6553)
+safeconsole.log(bool,uint256,bool,bool) (lib/forge-std/src/safeconsole.sol#6556-6583) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6562-6574)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6576-6582)
+safeconsole.log(bool,uint256,bool,uint256) (lib/forge-std/src/safeconsole.sol#6585-6612) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6591-6603)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6605-6611)
+safeconsole.log(bool,uint256,bool,bytes32) (lib/forge-std/src/safeconsole.sol#6614-6655) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6622-6644)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6646-6654)
+safeconsole.log(bool,uint256,uint256,address) (lib/forge-std/src/safeconsole.sol#6657-6684) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6663-6675)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6677-6683)
+safeconsole.log(bool,uint256,uint256,bool) (lib/forge-std/src/safeconsole.sol#6686-6713) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6692-6704)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6706-6712)
+safeconsole.log(bool,uint256,uint256,uint256) (lib/forge-std/src/safeconsole.sol#6715-6742) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6721-6733)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6735-6741)
+safeconsole.log(bool,uint256,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#6744-6785) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6752-6774)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6776-6784)
+safeconsole.log(bool,uint256,bytes32,address) (lib/forge-std/src/safeconsole.sol#6787-6828) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6795-6817)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6819-6827)
+safeconsole.log(bool,uint256,bytes32,bool) (lib/forge-std/src/safeconsole.sol#6830-6871) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6838-6860)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6862-6870)
+safeconsole.log(bool,uint256,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#6873-6914) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6881-6903)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6905-6913)
+safeconsole.log(bool,uint256,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#6916-6964) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6926-6951)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6953-6963)
+safeconsole.log(bool,bytes32,address,address) (lib/forge-std/src/safeconsole.sol#6966-7007) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6974-6996)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#6998-7006)
+safeconsole.log(bool,bytes32,address,bool) (lib/forge-std/src/safeconsole.sol#7009-7050) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7017-7039)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7041-7049)
+safeconsole.log(bool,bytes32,address,uint256) (lib/forge-std/src/safeconsole.sol#7052-7093) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7060-7082)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7084-7092)
+safeconsole.log(bool,bytes32,address,bytes32) (lib/forge-std/src/safeconsole.sol#7095-7143) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7105-7130)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7132-7142)
+safeconsole.log(bool,bytes32,bool,address) (lib/forge-std/src/safeconsole.sol#7145-7186) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7153-7175)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7177-7185)
+safeconsole.log(bool,bytes32,bool,bool) (lib/forge-std/src/safeconsole.sol#7188-7229) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7196-7218)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7220-7228)
+safeconsole.log(bool,bytes32,bool,uint256) (lib/forge-std/src/safeconsole.sol#7231-7272) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7239-7261)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7263-7271)
+safeconsole.log(bool,bytes32,bool,bytes32) (lib/forge-std/src/safeconsole.sol#7274-7322) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7284-7309)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7311-7321)
+safeconsole.log(bool,bytes32,uint256,address) (lib/forge-std/src/safeconsole.sol#7324-7365) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7332-7354)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7356-7364)
+safeconsole.log(bool,bytes32,uint256,bool) (lib/forge-std/src/safeconsole.sol#7367-7408) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7375-7397)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7399-7407)
+safeconsole.log(bool,bytes32,uint256,uint256) (lib/forge-std/src/safeconsole.sol#7410-7451) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7418-7440)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7442-7450)
+safeconsole.log(bool,bytes32,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#7453-7501) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7463-7488)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7490-7500)
+safeconsole.log(bool,bytes32,bytes32,address) (lib/forge-std/src/safeconsole.sol#7503-7551) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7513-7538)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7540-7550)
+safeconsole.log(bool,bytes32,bytes32,bool) (lib/forge-std/src/safeconsole.sol#7553-7601) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7563-7588)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7590-7600)
+safeconsole.log(bool,bytes32,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#7603-7651) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7613-7638)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7640-7650)
+safeconsole.log(bool,bytes32,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#7653-7708) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7665-7693)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7695-7707)
+safeconsole.log(uint256,address,address,address) (lib/forge-std/src/safeconsole.sol#7710-7737) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7716-7728)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7730-7736)
+safeconsole.log(uint256,address,address,bool) (lib/forge-std/src/safeconsole.sol#7739-7766) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7745-7757)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7759-7765)
+safeconsole.log(uint256,address,address,uint256) (lib/forge-std/src/safeconsole.sol#7768-7795) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7774-7786)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7788-7794)
+safeconsole.log(uint256,address,address,bytes32) (lib/forge-std/src/safeconsole.sol#7797-7838) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7805-7827)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7829-7837)
+safeconsole.log(uint256,address,bool,address) (lib/forge-std/src/safeconsole.sol#7840-7867) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7846-7858)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7860-7866)
+safeconsole.log(uint256,address,bool,bool) (lib/forge-std/src/safeconsole.sol#7869-7896) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7875-7887)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7889-7895)
+safeconsole.log(uint256,address,bool,uint256) (lib/forge-std/src/safeconsole.sol#7898-7925) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7904-7916)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7918-7924)
+safeconsole.log(uint256,address,bool,bytes32) (lib/forge-std/src/safeconsole.sol#7927-7968) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7935-7957)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7959-7967)
+safeconsole.log(uint256,address,uint256,address) (lib/forge-std/src/safeconsole.sol#7970-7997) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7976-7988)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#7990-7996)
+safeconsole.log(uint256,address,uint256,bool) (lib/forge-std/src/safeconsole.sol#7999-8026) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8005-8017)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8019-8025)
+safeconsole.log(uint256,address,uint256,uint256) (lib/forge-std/src/safeconsole.sol#8028-8055) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8034-8046)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8048-8054)
+safeconsole.log(uint256,address,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#8057-8098) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8065-8087)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8089-8097)
+safeconsole.log(uint256,address,bytes32,address) (lib/forge-std/src/safeconsole.sol#8100-8141) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8108-8130)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8132-8140)
+safeconsole.log(uint256,address,bytes32,bool) (lib/forge-std/src/safeconsole.sol#8143-8184) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8151-8173)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8175-8183)
+safeconsole.log(uint256,address,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#8186-8227) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8194-8216)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8218-8226)
+safeconsole.log(uint256,address,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#8229-8277) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8239-8264)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8266-8276)
+safeconsole.log(uint256,bool,address,address) (lib/forge-std/src/safeconsole.sol#8279-8306) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8285-8297)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8299-8305)
+safeconsole.log(uint256,bool,address,bool) (lib/forge-std/src/safeconsole.sol#8308-8335) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8314-8326)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8328-8334)
+safeconsole.log(uint256,bool,address,uint256) (lib/forge-std/src/safeconsole.sol#8337-8364) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8343-8355)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8357-8363)
+safeconsole.log(uint256,bool,address,bytes32) (lib/forge-std/src/safeconsole.sol#8366-8407) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8374-8396)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8398-8406)
+safeconsole.log(uint256,bool,bool,address) (lib/forge-std/src/safeconsole.sol#8409-8436) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8415-8427)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8429-8435)
+safeconsole.log(uint256,bool,bool,bool) (lib/forge-std/src/safeconsole.sol#8438-8465) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8444-8456)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8458-8464)
+safeconsole.log(uint256,bool,bool,uint256) (lib/forge-std/src/safeconsole.sol#8467-8494) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8473-8485)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8487-8493)
+safeconsole.log(uint256,bool,bool,bytes32) (lib/forge-std/src/safeconsole.sol#8496-8537) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8504-8526)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8528-8536)
+safeconsole.log(uint256,bool,uint256,address) (lib/forge-std/src/safeconsole.sol#8539-8566) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8545-8557)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8559-8565)
+safeconsole.log(uint256,bool,uint256,bool) (lib/forge-std/src/safeconsole.sol#8568-8595) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8574-8586)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8588-8594)
+safeconsole.log(uint256,bool,uint256,uint256) (lib/forge-std/src/safeconsole.sol#8597-8624) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8603-8615)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8617-8623)
+safeconsole.log(uint256,bool,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#8626-8667) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8634-8656)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8658-8666)
+safeconsole.log(uint256,bool,bytes32,address) (lib/forge-std/src/safeconsole.sol#8669-8710) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8677-8699)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8701-8709)
+safeconsole.log(uint256,bool,bytes32,bool) (lib/forge-std/src/safeconsole.sol#8712-8753) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8720-8742)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8744-8752)
+safeconsole.log(uint256,bool,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#8755-8796) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8763-8785)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8787-8795)
+safeconsole.log(uint256,bool,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#8798-8846) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8808-8833)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8835-8845)
+safeconsole.log(uint256,uint256,address,address) (lib/forge-std/src/safeconsole.sol#8848-8875) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8854-8866)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8868-8874)
+safeconsole.log(uint256,uint256,address,bool) (lib/forge-std/src/safeconsole.sol#8877-8904) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8883-8895)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8897-8903)
+safeconsole.log(uint256,uint256,address,uint256) (lib/forge-std/src/safeconsole.sol#8906-8933) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8912-8924)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8926-8932)
+safeconsole.log(uint256,uint256,address,bytes32) (lib/forge-std/src/safeconsole.sol#8935-8976) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8943-8965)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8967-8975)
+safeconsole.log(uint256,uint256,bool,address) (lib/forge-std/src/safeconsole.sol#8978-9005) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8984-8996)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#8998-9004)
+safeconsole.log(uint256,uint256,bool,bool) (lib/forge-std/src/safeconsole.sol#9007-9034) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9013-9025)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9027-9033)
+safeconsole.log(uint256,uint256,bool,uint256) (lib/forge-std/src/safeconsole.sol#9036-9063) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9042-9054)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9056-9062)
+safeconsole.log(uint256,uint256,bool,bytes32) (lib/forge-std/src/safeconsole.sol#9065-9106) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9073-9095)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9097-9105)
+safeconsole.log(uint256,uint256,uint256,address) (lib/forge-std/src/safeconsole.sol#9108-9135) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9114-9126)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9128-9134)
+safeconsole.log(uint256,uint256,uint256,bool) (lib/forge-std/src/safeconsole.sol#9137-9164) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9143-9155)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9157-9163)
+safeconsole.log(uint256,uint256,uint256,uint256) (lib/forge-std/src/safeconsole.sol#9166-9193) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9172-9184)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9186-9192)
+safeconsole.log(uint256,uint256,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#9195-9236) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9203-9225)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9227-9235)
+safeconsole.log(uint256,uint256,bytes32,address) (lib/forge-std/src/safeconsole.sol#9238-9279) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9246-9268)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9270-9278)
+safeconsole.log(uint256,uint256,bytes32,bool) (lib/forge-std/src/safeconsole.sol#9281-9322) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9289-9311)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9313-9321)
+safeconsole.log(uint256,uint256,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#9324-9365) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9332-9354)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9356-9364)
+safeconsole.log(uint256,uint256,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#9367-9415) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9377-9402)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9404-9414)
+safeconsole.log(uint256,bytes32,address,address) (lib/forge-std/src/safeconsole.sol#9417-9458) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9425-9447)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9449-9457)
+safeconsole.log(uint256,bytes32,address,bool) (lib/forge-std/src/safeconsole.sol#9460-9501) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9468-9490)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9492-9500)
+safeconsole.log(uint256,bytes32,address,uint256) (lib/forge-std/src/safeconsole.sol#9503-9544) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9511-9533)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9535-9543)
+safeconsole.log(uint256,bytes32,address,bytes32) (lib/forge-std/src/safeconsole.sol#9546-9594) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9556-9581)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9583-9593)
+safeconsole.log(uint256,bytes32,bool,address) (lib/forge-std/src/safeconsole.sol#9596-9637) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9604-9626)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9628-9636)
+safeconsole.log(uint256,bytes32,bool,bool) (lib/forge-std/src/safeconsole.sol#9639-9680) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9647-9669)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9671-9679)
+safeconsole.log(uint256,bytes32,bool,uint256) (lib/forge-std/src/safeconsole.sol#9682-9723) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9690-9712)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9714-9722)
+safeconsole.log(uint256,bytes32,bool,bytes32) (lib/forge-std/src/safeconsole.sol#9725-9773) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9735-9760)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9762-9772)
+safeconsole.log(uint256,bytes32,uint256,address) (lib/forge-std/src/safeconsole.sol#9775-9816) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9783-9805)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9807-9815)
+safeconsole.log(uint256,bytes32,uint256,bool) (lib/forge-std/src/safeconsole.sol#9818-9859) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9826-9848)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9850-9858)
+safeconsole.log(uint256,bytes32,uint256,uint256) (lib/forge-std/src/safeconsole.sol#9861-9902) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9869-9891)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9893-9901)
+safeconsole.log(uint256,bytes32,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#9904-9952) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9914-9939)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9941-9951)
+safeconsole.log(uint256,bytes32,bytes32,address) (lib/forge-std/src/safeconsole.sol#9954-10002) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9964-9989)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#9991-10001)
+safeconsole.log(uint256,bytes32,bytes32,bool) (lib/forge-std/src/safeconsole.sol#10004-10052) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10014-10039)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10041-10051)
+safeconsole.log(uint256,bytes32,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#10054-10102) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10064-10089)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10091-10101)
+safeconsole.log(uint256,bytes32,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#10104-10159) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10116-10144)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10146-10158)
+safeconsole.log(bytes32,address,address,address) (lib/forge-std/src/safeconsole.sol#10161-10202) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10169-10191)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10193-10201)
+safeconsole.log(bytes32,address,address,bool) (lib/forge-std/src/safeconsole.sol#10204-10245) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10212-10234)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10236-10244)
+safeconsole.log(bytes32,address,address,uint256) (lib/forge-std/src/safeconsole.sol#10247-10288) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10255-10277)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10279-10287)
+safeconsole.log(bytes32,address,address,bytes32) (lib/forge-std/src/safeconsole.sol#10290-10338) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10300-10325)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10327-10337)
+safeconsole.log(bytes32,address,bool,address) (lib/forge-std/src/safeconsole.sol#10340-10381) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10348-10370)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10372-10380)
+safeconsole.log(bytes32,address,bool,bool) (lib/forge-std/src/safeconsole.sol#10383-10424) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10391-10413)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10415-10423)
+safeconsole.log(bytes32,address,bool,uint256) (lib/forge-std/src/safeconsole.sol#10426-10467) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10434-10456)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10458-10466)
+safeconsole.log(bytes32,address,bool,bytes32) (lib/forge-std/src/safeconsole.sol#10469-10517) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10479-10504)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10506-10516)
+safeconsole.log(bytes32,address,uint256,address) (lib/forge-std/src/safeconsole.sol#10519-10560) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10527-10549)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10551-10559)
+safeconsole.log(bytes32,address,uint256,bool) (lib/forge-std/src/safeconsole.sol#10562-10603) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10570-10592)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10594-10602)
+safeconsole.log(bytes32,address,uint256,uint256) (lib/forge-std/src/safeconsole.sol#10605-10646) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10613-10635)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10637-10645)
+safeconsole.log(bytes32,address,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#10648-10696) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10658-10683)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10685-10695)
+safeconsole.log(bytes32,address,bytes32,address) (lib/forge-std/src/safeconsole.sol#10698-10746) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10708-10733)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10735-10745)
+safeconsole.log(bytes32,address,bytes32,bool) (lib/forge-std/src/safeconsole.sol#10748-10796) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10758-10783)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10785-10795)
+safeconsole.log(bytes32,address,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#10798-10846) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10808-10833)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10835-10845)
+safeconsole.log(bytes32,address,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#10848-10903) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10860-10888)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10890-10902)
+safeconsole.log(bytes32,bool,address,address) (lib/forge-std/src/safeconsole.sol#10905-10946) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10913-10935)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10937-10945)
+safeconsole.log(bytes32,bool,address,bool) (lib/forge-std/src/safeconsole.sol#10948-10989) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10956-10978)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10980-10988)
+safeconsole.log(bytes32,bool,address,uint256) (lib/forge-std/src/safeconsole.sol#10991-11032) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#10999-11021)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11023-11031)
+safeconsole.log(bytes32,bool,address,bytes32) (lib/forge-std/src/safeconsole.sol#11034-11082) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11044-11069)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11071-11081)
+safeconsole.log(bytes32,bool,bool,address) (lib/forge-std/src/safeconsole.sol#11084-11125) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11092-11114)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11116-11124)
+safeconsole.log(bytes32,bool,bool,bool) (lib/forge-std/src/safeconsole.sol#11127-11168) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11135-11157)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11159-11167)
+safeconsole.log(bytes32,bool,bool,uint256) (lib/forge-std/src/safeconsole.sol#11170-11211) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11178-11200)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11202-11210)
+safeconsole.log(bytes32,bool,bool,bytes32) (lib/forge-std/src/safeconsole.sol#11213-11261) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11223-11248)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11250-11260)
+safeconsole.log(bytes32,bool,uint256,address) (lib/forge-std/src/safeconsole.sol#11263-11304) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11271-11293)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11295-11303)
+safeconsole.log(bytes32,bool,uint256,bool) (lib/forge-std/src/safeconsole.sol#11306-11347) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11314-11336)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11338-11346)
+safeconsole.log(bytes32,bool,uint256,uint256) (lib/forge-std/src/safeconsole.sol#11349-11390) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11357-11379)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11381-11389)
+safeconsole.log(bytes32,bool,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#11392-11440) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11402-11427)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11429-11439)
+safeconsole.log(bytes32,bool,bytes32,address) (lib/forge-std/src/safeconsole.sol#11442-11490) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11452-11477)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11479-11489)
+safeconsole.log(bytes32,bool,bytes32,bool) (lib/forge-std/src/safeconsole.sol#11492-11540) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11502-11527)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11529-11539)
+safeconsole.log(bytes32,bool,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#11542-11590) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11552-11577)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11579-11589)
+safeconsole.log(bytes32,bool,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#11592-11647) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11604-11632)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11634-11646)
+safeconsole.log(bytes32,uint256,address,address) (lib/forge-std/src/safeconsole.sol#11649-11690) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11657-11679)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11681-11689)
+safeconsole.log(bytes32,uint256,address,bool) (lib/forge-std/src/safeconsole.sol#11692-11733) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11700-11722)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11724-11732)
+safeconsole.log(bytes32,uint256,address,uint256) (lib/forge-std/src/safeconsole.sol#11735-11776) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11743-11765)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11767-11775)
+safeconsole.log(bytes32,uint256,address,bytes32) (lib/forge-std/src/safeconsole.sol#11778-11826) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11788-11813)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11815-11825)
+safeconsole.log(bytes32,uint256,bool,address) (lib/forge-std/src/safeconsole.sol#11828-11869) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11836-11858)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11860-11868)
+safeconsole.log(bytes32,uint256,bool,bool) (lib/forge-std/src/safeconsole.sol#11871-11912) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11879-11901)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11903-11911)
+safeconsole.log(bytes32,uint256,bool,uint256) (lib/forge-std/src/safeconsole.sol#11914-11955) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11922-11944)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11946-11954)
+safeconsole.log(bytes32,uint256,bool,bytes32) (lib/forge-std/src/safeconsole.sol#11957-12005) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11967-11992)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#11994-12004)
+safeconsole.log(bytes32,uint256,uint256,address) (lib/forge-std/src/safeconsole.sol#12007-12048) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12015-12037)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12039-12047)
+safeconsole.log(bytes32,uint256,uint256,bool) (lib/forge-std/src/safeconsole.sol#12050-12091) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12058-12080)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12082-12090)
+safeconsole.log(bytes32,uint256,uint256,uint256) (lib/forge-std/src/safeconsole.sol#12093-12134) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12101-12123)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12125-12133)
+safeconsole.log(bytes32,uint256,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#12136-12184) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12146-12171)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12173-12183)
+safeconsole.log(bytes32,uint256,bytes32,address) (lib/forge-std/src/safeconsole.sol#12186-12234) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12196-12221)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12223-12233)
+safeconsole.log(bytes32,uint256,bytes32,bool) (lib/forge-std/src/safeconsole.sol#12236-12284) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12246-12271)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12273-12283)
+safeconsole.log(bytes32,uint256,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#12286-12334) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12296-12321)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12323-12333)
+safeconsole.log(bytes32,uint256,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#12336-12391) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12348-12376)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12378-12390)
+safeconsole.log(bytes32,bytes32,address,address) (lib/forge-std/src/safeconsole.sol#12393-12441) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12403-12428)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12430-12440)
+safeconsole.log(bytes32,bytes32,address,bool) (lib/forge-std/src/safeconsole.sol#12443-12491) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12453-12478)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12480-12490)
+safeconsole.log(bytes32,bytes32,address,uint256) (lib/forge-std/src/safeconsole.sol#12493-12541) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12503-12528)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12530-12540)
+safeconsole.log(bytes32,bytes32,address,bytes32) (lib/forge-std/src/safeconsole.sol#12543-12598) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12555-12583)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12585-12597)
+safeconsole.log(bytes32,bytes32,bool,address) (lib/forge-std/src/safeconsole.sol#12600-12648) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12610-12635)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12637-12647)
+safeconsole.log(bytes32,bytes32,bool,bool) (lib/forge-std/src/safeconsole.sol#12650-12698) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12660-12685)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12687-12697)
+safeconsole.log(bytes32,bytes32,bool,uint256) (lib/forge-std/src/safeconsole.sol#12700-12748) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12710-12735)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12737-12747)
+safeconsole.log(bytes32,bytes32,bool,bytes32) (lib/forge-std/src/safeconsole.sol#12750-12805) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12762-12790)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12792-12804)
+safeconsole.log(bytes32,bytes32,uint256,address) (lib/forge-std/src/safeconsole.sol#12807-12855) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12817-12842)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12844-12854)
+safeconsole.log(bytes32,bytes32,uint256,bool) (lib/forge-std/src/safeconsole.sol#12857-12905) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12867-12892)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12894-12904)
+safeconsole.log(bytes32,bytes32,uint256,uint256) (lib/forge-std/src/safeconsole.sol#12907-12955) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12917-12942)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12944-12954)
+safeconsole.log(bytes32,bytes32,uint256,bytes32) (lib/forge-std/src/safeconsole.sol#12957-13012) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12969-12997)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#12999-13011)
+safeconsole.log(bytes32,bytes32,bytes32,address) (lib/forge-std/src/safeconsole.sol#13014-13069) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#13026-13054)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#13056-13068)
+safeconsole.log(bytes32,bytes32,bytes32,bool) (lib/forge-std/src/safeconsole.sol#13071-13126) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#13083-13111)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#13113-13125)
+safeconsole.log(bytes32,bytes32,bytes32,uint256) (lib/forge-std/src/safeconsole.sol#13128-13183) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#13140-13168)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#13170-13182)
+safeconsole.log(bytes32,bytes32,bytes32,bytes32) (lib/forge-std/src/safeconsole.sol#13185-13247) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#13199-13230)
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#13232-13246)
+safeconsole.log.asm_0.writeString() (lib/forge-std/src/safeconsole.sol#13200-13206) uses assembly
+	- INLINE ASM (lib/forge-std/src/safeconsole.sol#13200-13206)
+AddressUpgradeable._revert(bytes,string) (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#231-243) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#236-239)
+StorageSlotUpgradeable.getAddressSlot(bytes32) (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#62-67) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#64-66)
+StorageSlotUpgradeable.getBooleanSlot(bytes32) (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#72-77) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#74-76)
+StorageSlotUpgradeable.getBytes32Slot(bytes32) (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#82-87) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#84-86)
+StorageSlotUpgradeable.getUint256Slot(bytes32) (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#92-97) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#94-96)
+StorageSlotUpgradeable.getStringSlot(bytes32) (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#102-107) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#104-106)
+StorageSlotUpgradeable.getStringSlot(string) (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#112-117) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#114-116)
+StorageSlotUpgradeable.getBytesSlot(bytes32) (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#122-127) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#124-126)
+StorageSlotUpgradeable.getBytesSlot(bytes) (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#132-137) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts-upgradeable/contracts/utils/StorageSlotUpgradeable.sol#134-136)
+Proxy._delegate(address) (lib/openzeppelin-contracts/contracts/proxy/Proxy.sol#22-45) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/proxy/Proxy.sol#23-44)
+ERC721._checkOnERC721Received(address,address,uint256,bytes) (lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol#399-421) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol#413-415)
+Address._revert(bytes,string) (lib/openzeppelin-contracts/contracts/utils/Address.sol#231-243) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/Address.sol#236-239)
+StorageSlot.getAddressSlot(bytes32) (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#62-67) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#64-66)
+StorageSlot.getBooleanSlot(bytes32) (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#72-77) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#74-76)
+StorageSlot.getBytes32Slot(bytes32) (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#82-87) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#84-86)
+StorageSlot.getUint256Slot(bytes32) (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#92-97) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#94-96)
+StorageSlot.getStringSlot(bytes32) (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#102-107) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#104-106)
+StorageSlot.getStringSlot(string) (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#112-117) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#114-116)
+StorageSlot.getBytesSlot(bytes32) (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#122-127) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#124-126)
+StorageSlot.getBytesSlot(bytes) (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#132-137) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/StorageSlot.sol#134-136)
+Strings.toString(uint256) (lib/openzeppelin-contracts/contracts/utils/Strings.sol#19-39) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/Strings.sol#25-27)
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/Strings.sol#31-33)
+Math.mulDiv(uint256,uint256,uint256) (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#55-134) uses assembly
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#62-66)
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#85-92)
+	- INLINE ASM (lib/openzeppelin-contracts/contracts/utils/math/Math.sol#99-108)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#assembly-usage
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 387 result(s) found

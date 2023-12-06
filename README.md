@@ -148,6 +148,8 @@ The 4naly3er report can be found [here](https://github.com/code-423n4/2023-12-pa
 
 Automated findings output for the audit can be found [here](https://github.com/code-423n4/2023-12-particle/blob/main/bot-report.md) within 24 hours of audit opening.
 
+Slither results can be found in [here](https://github.com/code-423n4/2023-12-particle/blob/main/slither). We’ve reviewed all findings that relate to Particle’s code (excluding imported libraries), and found no concerning issues.
+
 _Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
 
