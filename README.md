@@ -1,5 +1,5 @@
 # Particle Leverage AMM (LAMM) Protocol 
-Invitational Audit Details
+### Invitational Audit Details
 
 - Total Prize Pool: $24,150 USDC (Notion: Total award pool)
   - HM awards: $18,252 USDC (Notion: HM (main) pool)
