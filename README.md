@@ -50,7 +50,7 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
   - Judge awards: $3,370 USDC (Notion: Judge Fee)
   - Scout awards: $500 USDC (Notion: Scout fee - but usually $500 USDC)
 - Join [C4 Discord](https://discord.gg/code4rena) to register
-- Submit findings [using the C4 form](https://code4rena.com/contests/2023-12-particle/submit)
+- Submit findings [using the C4 form](https://code4rena.com/contests/2023-12-particle-leverage-amm-protocol-invitational/submit)
 - [Read our guidelines for more details](https://docs.code4rena.com/roles/wardens)
 - Starts December 11, 2023 20:00 UTC 
 - Ends December 21, 2023 20:00 UTC 
