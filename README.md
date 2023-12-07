@@ -15,6 +15,16 @@
 - Starts December 11, 2023 20:00 UTC 
 - Ends December 21, 2023 20:00 UTC
 
+## Automated Findings / Publicly Known Issues
+
+The 4naly3er report can be found [here](https://github.com/code-423n4/2023-12-particle/blob/main/4naly3er-report.md).
+
+Automated findings output for the audit can be found [here](https://github.com/code-423n4/2023-12-particle/blob/main/bot-report.md) within 24 hours of audit opening.
+
+Slither results can be found in [here](https://github.com/code-423n4/2023-12-particle/blob/main/slither). We’ve reviewed all findings that relate to Particle’s code (excluding imported libraries), and found no concerning issues.
+
+_Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
+
 ## Overview
 
 Particle LAMM protocol enables permissionless leverage trading for any ERC20 tokens. The key idea is to borrow concentrated liquidity from AMMs (Uniswap v3 as a start). For a concentrated liquidity position, its price boundaries mathematically define the amount of tokens to convert at all price points. When borrowing from a concentrated liquidity position, the protocol calculates the exact amount required to top up upfront, such that the contract always locks enough tokens in case the price moves adversely to a price boundary. This design eliminates the need for a price oracle.
@@ -141,14 +151,5 @@ yarn verify --network goerli/mainnet [IMPLMENTATION_ADDRESS]
 yarn verify --network goerli/mainnet [PROXY_ADDRESS] [IMPLMENTATION_ADDRESS] 0x
 ```
 
-## Automated Findings / Publicly Known Issues
-
-The 4naly3er report can be found [here](https://github.com/code-423n4/2023-12-particle/blob/main/4naly3er-report.md).
-
-Automated findings output for the audit can be found [here](https://github.com/code-423n4/2023-12-particle/blob/main/bot-report.md) within 24 hours of audit opening.
-
-Slither results can be found in [here](https://github.com/code-423n4/2023-12-particle/blob/main/slither). We’ve reviewed all findings that relate to Particle’s code (excluding imported libraries), and found no concerning issues.
-
-_Note for C4 wardens: Anything included in this `Automated Findings / Publicly Known Issues` section is considered a publicly known issue and is ineligible for awards._
 
 
