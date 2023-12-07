@@ -1,0 +1,27 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.01s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+ClosePositionTest.testLongCannotOverspendFromData().amountSwap (test/ClosePosition.t.sol#448) is written in both
+	(amount0ToReturn,amount1ToReturn,amountSwap,data) = _prepareCloseLongPosition(0,true,true) (test/ClosePosition.t.sol#445-450)
+	amountSwap = ethCollateral - amount1ToReturn (test/ClosePosition.t.sol#460)
+ClosePositionTest.testLongCannotOverspendFromData().data (test/ClosePosition.t.sol#449) is written in both
+	(amount0ToReturn,amount1ToReturn,amountSwap,data) = _prepareCloseLongPosition(0,true,true) (test/ClosePosition.t.sol#445-450)
+	data = abi.encodeWithSelector(ISwapRouter.exactInputSingle.selector,params) (test/ClosePosition.t.sol#471)
+ClosePositionTest.testNonParticleRecipientInSwapData().amountSwap (test/ClosePosition.t.sol#493) is written in both
+	(amount0ToReturn,amount1ToReturn,amountSwap,data) = _prepareCloseLongPosition(0,true,true) (test/ClosePosition.t.sol#490-495)
+	amountSwap = ethCollateral - amount1ToReturn (test/ClosePosition.t.sol#505)
+ClosePositionTest.testNonParticleRecipientInSwapData().data (test/ClosePosition.t.sol#494) is written in both
+	(amount0ToReturn,amount1ToReturn,amountSwap,data) = _prepareCloseLongPosition(0,true,true) (test/ClosePosition.t.sol#490-495)
+	data = abi.encodeWithSelector(ISwapRouter.exactInputSingle.selector,params) (test/ClosePosition.t.sol#516)
+ClosePositionTest.testShortCannotOverspendFromData().amountSwap (test/ClosePosition.t.sol#674) is written in both
+	(amount0ToReturn,amount1ToReturn,amountSwap,data) = _prepareCloseShortPosition(0,true,true) (test/ClosePosition.t.sol#671-676)
+	amountSwap = usdcCollateral - amount0ToReturn (test/ClosePosition.t.sol#687)
+ClosePositionTest.testShortCannotOverspendFromData().data (test/ClosePosition.t.sol#675) is written in both
+	(amount0ToReturn,amount1ToReturn,amountSwap,data) = _prepareCloseShortPosition(0,true,true) (test/ClosePosition.t.sol#671-676)
+	data = abi.encodeWithSelector(ISwapRouter.exactInputSingle.selector,params) (test/ClosePosition.t.sol#698)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#write-after-write
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 6 result(s) found

@@ -1,0 +1,15 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.23s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+ParticleInfoReader.getDeepPool(address,address) (contracts/protocol/ParticleInfoReader.sol#102-117) has external calls inside a loop: poolAddress = Base.UNI_FACTORY.getPool(token0,token1,feeTiers[i]) (contracts/protocol/ParticleInfoReader.sol#107)
+ParticleInfoReader.getDeepPool(address,address) (contracts/protocol/ParticleInfoReader.sol#102-117) has external calls inside a loop: liquidity = pool.liquidity() (contracts/protocol/ParticleInfoReader.sol#110)
+ParticlePositionManagerTestBase._swap(address,address,address,uint24,uint256) (test/Base.t.sol#80-95) has external calls inside a loop: vm.startPrank(swapper) (test/Base.t.sol#81)
+ParticlePositionManagerTestBase._swap(address,address,address,uint24,uint256) (test/Base.t.sol#80-95) has external calls inside a loop: ISwapRouter(UNI_ROUTER_ADDR).exactInputSingle(params) (test/Base.t.sol#93)
+ParticlePositionManagerTestBase._swap(address,address,address,uint24,uint256) (test/Base.t.sol#80-95) has external calls inside a loop: vm.stopPrank() (test/Base.t.sol#94)
+TransferHelper.safeApprove(address,address,uint256) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#43-50) has external calls inside a loop: (success,data) = token.call(abi.encodeWithSelector(IERC20.approve.selector,to,value)) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#48)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation/#calls-inside-a-loop
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 6 result(s) found

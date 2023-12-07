@@ -1,0 +1,26 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.06s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+stdStorageSafe.root(StdStorage).root_slot (lib/forge-std/src/StdStorage.sol#195) is a local variable never initialized
+Base.getOwedInfo(DataStruct.OwedInfoParams).cache (contracts/libraries/Base.sol#280) is a local variable never initialized
+ParticlePositionManager.liquidatePosition(DataStruct.ClosePositionParams,address).closeCache (contracts/protocol/ParticlePositionManager.sol#322) is a local variable never initialized
+ParticlePositionManager.liquidatePosition(DataStruct.ClosePositionParams,address).liquidateCache (contracts/protocol/ParticlePositionManager.sol#323) is a local variable never initialized
+Base.getRequiredRepay(uint128,uint256).repayCache (contracts/libraries/Base.sol#167) is a local variable never initialized
+ERC1967UpgradeUpgradeable._upgradeToAndCallUUPS(address,bytes,bool).slot (lib/openzeppelin-contracts-upgradeable/contracts/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol#84) is a local variable never initialized
+StdCheatsSafe.rawToConvertedEIP1559Detail(StdCheatsSafe.RawTx1559Detail).txDetail (lib/forge-std/src/StdCheats.sol#397) is a local variable never initialized
+StdCheatsSafe.readEIP1559ScriptArtifact(string).artifact (lib/forge-std/src/StdCheats.sol#361) is a local variable never initialized
+ParticleInfoReader.getOwedInfo(address,uint96).cache (contracts/protocol/ParticleInfoReader.sol#368) is a local variable never initialized
+StdCheatsSafe.rawToConvertedReceipt(StdCheatsSafe.RawReceipt).receipt (lib/forge-std/src/StdCheats.sol#449) is a local variable never initialized
+StdCheatsSafe.rawToConvertedReceiptLogs(StdCheatsSafe.RawReceiptLog[]).i (lib/forge-std/src/StdCheats.sol#473) is a local variable never initialized
+StdCheatsSafe.rawToConvertedEIPTx1559(StdCheatsSafe.RawTx1559).transaction (lib/forge-std/src/StdCheats.sol#381) is a local variable never initialized
+StdCheatsSafe.rawToConvertedReceipts(StdCheatsSafe.RawReceipt[]).i (lib/forge-std/src/StdCheats.sol#442) is a local variable never initialized
+ERC1967Upgrade._upgradeToAndCallUUPS(address,bytes,bool).slot (lib/openzeppelin-contracts/contracts/proxy/ERC1967/ERC1967Upgrade.sol#78) is a local variable never initialized
+StdCheatsSafe.rawToConvertedEIPTx1559s(StdCheatsSafe.RawTx1559[]).i (lib/forge-std/src/StdCheats.sol#374) is a local variable never initialized
+ParticlePositionManager.closePosition(DataStruct.ClosePositionParams).cache (contracts/protocol/ParticlePositionManager.sol#277) is a local variable never initialized
+ParticlePositionManager.openPosition(DataStruct.OpenPositionParams).cache (contracts/protocol/ParticlePositionManager.sol#157) is a local variable never initialized
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#uninitialized-local-variables
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 17 result(s) found

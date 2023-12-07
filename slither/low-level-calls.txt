@@ -1,0 +1,70 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 6.99s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+Low level call in Base.swap(address,address,uint256,uint256,address,bytes) (contracts/libraries/Base.sol#42-66):
+	- (success) = dexAggregator.call(data) (contracts/libraries/Base.sol#57)
+Low level call in DSTest.failed() (lib/forge-std/lib/ds-test/src/test.sol#47-63):
+	- (retdata) = HEVM_ADDRESS.call(abi.encodePacked(bytes4(keccak256(bytes)(load(address,bytes32))),abi.encode(HEVM_ADDRESS,bytes32(failed)))) (lib/forge-std/lib/ds-test/src/test.sol#53-58)
+Low level call in DSTest.fail() (lib/forge-std/lib/ds-test/src/test.sol#65-76):
+	- (status) = HEVM_ADDRESS.call(abi.encodePacked(bytes4(keccak256(bytes)(store(address,bytes32,bytes32))),abi.encode(HEVM_ADDRESS,bytes32(failed),bytes32(uint256(0x01))))) (lib/forge-std/lib/ds-test/src/test.sol#67-72)
+Low level call in StdAssertions.assertEqCall(address,bytes,address,bytes,bool) (lib/forge-std/src/StdAssertions.sol#344-375):
+	- (successA,returnDataA) = address(targetA).call(callDataA) (lib/forge-std/src/StdAssertions.sol#351)
+	- (successB,returnDataB) = address(targetB).call(callDataB) (lib/forge-std/src/StdAssertions.sol#352)
+Low level call in StdCheatsSafe.assumeNotBlacklisted(address,address) (lib/forge-std/src/StdCheats.sol#209-227):
+	- (success,returnData) = token.staticcall(abi.encodeWithSelector(0xfe575a87,addr)) (lib/forge-std/src/StdCheats.sol#221)
+	- (success,returnData) = token.staticcall(abi.encodeWithSelector(0xe47d6060,addr)) (lib/forge-std/src/StdCheats.sol#225)
+Low level call in StdCheatsSafe._isPayable(address) (lib/forge-std/src/StdCheats.sol#284-300):
+	- (success) = address(addr).call{value: 1}() (lib/forge-std/src/StdCheats.sol#293)
+Low level call in StdCheats.deal(address,address,uint256,bool) (lib/forge-std/src/StdCheats.sol#728-747):
+	- (balData) = token.staticcall(abi.encodeWithSelector(0x70a08231,to)) (lib/forge-std/src/StdCheats.sol#730)
+	- (totSupData) = token.staticcall(abi.encodeWithSelector(0x18160ddd)) (lib/forge-std/src/StdCheats.sol#738)
+Low level call in StdCheats.dealERC1155(address,address,uint256,uint256,bool) (lib/forge-std/src/StdCheats.sol#749-772):
+	- (balData) = token.staticcall(abi.encodeWithSelector(0x00fdd58e,to,id)) (lib/forge-std/src/StdCheats.sol#751)
+	- (totSupData) = token.staticcall(abi.encodeWithSelector(0xbd85b039,id)) (lib/forge-std/src/StdCheats.sol#759)
+Low level call in StdCheats.dealERC721(address,address,uint256) (lib/forge-std/src/StdCheats.sol#774-794):
+	- (successMinted,ownerData) = token.staticcall(abi.encodeWithSelector(0x6352211e,id)) (lib/forge-std/src/StdCheats.sol#776)
+	- (fromBalData) = token.staticcall(abi.encodeWithSelector(0x70a08231,abi.decode(ownerData,(address)))) (lib/forge-std/src/StdCheats.sol#780-781)
+	- (toBalData) = token.staticcall(abi.encodeWithSelector(0x70a08231,to)) (lib/forge-std/src/StdCheats.sol#785)
+Low level call in StdCheats.deployCodeTo(string,bytes,uint256,address) (lib/forge-std/src/StdCheats.sol#804-810):
+	- (success,runtimeBytecode) = where.call{value: value}() (lib/forge-std/src/StdCheats.sol#807)
+Low level call in StdCheats.console2_log(string) (lib/forge-std/src/StdCheats.sol#813-816):
+	- (status) = address(CONSOLE2_ADDRESS).staticcall(abi.encodeWithSignature(log(string),p0)) (lib/forge-std/src/StdCheats.sol#814)
+Low level call in stdStorageSafe.find(StdStorage) (lib/forge-std/src/StdStorage.sol#32-109):
+	- (rdat) = who.staticcall(cald) (lib/forge-std/src/StdStorage.sol#46)
+	- (success,rdat_scope_0) = who.staticcall(cald) (lib/forge-std/src/StdStorage.sol#80)
+Low level call in stdStorage.checked_write(StdStorage,bytes32) (lib/forge-std/src/StdStorage.sol#294-324):
+	- (rdat) = who.staticcall(cald) (lib/forge-std/src/StdStorage.sol#308)
+Low level call in StdUtils.console2_log(string,uint256) (lib/forge-std/src/StdUtils.sol#189-192):
+	- (status) = address(CONSOLE2_ADDRESS).staticcall(abi.encodeWithSignature(log(string,uint256),p0,p1)) (lib/forge-std/src/StdUtils.sol#190)
+Low level call in StdUtils.console2_log(string,string) (lib/forge-std/src/StdUtils.sol#194-197):
+	- (status) = address(CONSOLE2_ADDRESS).staticcall(abi.encodeWithSignature(log(string,string),p0,p1)) (lib/forge-std/src/StdUtils.sol#195)
+Low level call in AddressUpgradeable.sendValue(address,uint256) (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#64-69):
+	- (success) = recipient.call{value: amount}() (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#67)
+Low level call in AddressUpgradeable.functionCallWithValue(address,bytes,uint256,string) (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#128-137):
+	- (success,returndata) = target.call{value: value}(data) (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#135)
+Low level call in AddressUpgradeable.functionStaticCall(address,bytes,string) (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#155-162):
+	- (success,returndata) = target.staticcall(data) (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#160)
+Low level call in AddressUpgradeable.functionDelegateCall(address,bytes,string) (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#180-187):
+	- (success,returndata) = target.delegatecall(data) (lib/openzeppelin-contracts-upgradeable/contracts/utils/AddressUpgradeable.sol#185)
+Low level call in Address.sendValue(address,uint256) (lib/openzeppelin-contracts/contracts/utils/Address.sol#64-69):
+	- (success) = recipient.call{value: amount}() (lib/openzeppelin-contracts/contracts/utils/Address.sol#67)
+Low level call in Address.functionCallWithValue(address,bytes,uint256,string) (lib/openzeppelin-contracts/contracts/utils/Address.sol#128-137):
+	- (success,returndata) = target.call{value: value}(data) (lib/openzeppelin-contracts/contracts/utils/Address.sol#135)
+Low level call in Address.functionStaticCall(address,bytes,string) (lib/openzeppelin-contracts/contracts/utils/Address.sol#155-162):
+	- (success,returndata) = target.staticcall(data) (lib/openzeppelin-contracts/contracts/utils/Address.sol#160)
+Low level call in Address.functionDelegateCall(address,bytes,string) (lib/openzeppelin-contracts/contracts/utils/Address.sol#180-187):
+	- (success,returndata) = target.delegatecall(data) (lib/openzeppelin-contracts/contracts/utils/Address.sol#185)
+Low level call in TransferHelper.safeTransferFrom(address,address,address,uint256) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#13-22):
+	- (success,data) = token.call(abi.encodeWithSelector(IERC20.transferFrom.selector,from,to,value)) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#19-20)
+Low level call in TransferHelper.safeTransfer(address,address,uint256) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#29-36):
+	- (success,data) = token.call(abi.encodeWithSelector(IERC20.transfer.selector,to,value)) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#34)
+Low level call in TransferHelper.safeApprove(address,address,uint256) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#43-50):
+	- (success,data) = token.call(abi.encodeWithSelector(IERC20.approve.selector,to,value)) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#48)
+Low level call in TransferHelper.safeTransferETH(address,uint256) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#56-59):
+	- (success) = to.call{value: value}(new bytes(0)) (lib/v3-periphery/contracts/libraries/TransferHelper.sol#57)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#low-level-calls
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 27 result(s) found

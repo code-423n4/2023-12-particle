@@ -1,0 +1,25 @@
+{
+    "editor.tabSize": 2,
+    "editor.rulers": [
+      120
+    ],
+    "solidity.packageDefaultDependenciesContractsDirectory": "src",
+    "solidity.packageDefaultDependenciesDirectory": "lib",
+    "solidity.compileUsingRemoteVersion": "v0.8.23",
+    "search.exclude": { "lib": true },
+    "[solidity]": {
+      "editor.formatOnSave": true,
+    },
+    "[javascript]": {
+      "editor.tabSize": 2,
+      "editor.trimAutoWhitespace": true,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.tabSize": 2,
+      "editor.trimAutoWhitespace": true,
+      "editor.formatOnSave": true,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+  }

@@ -1,0 +1,17 @@
+'forge clean' running (wd: /Users/wukong/Desktop/audit/2023-12-particle)
+'forge build --build-info --force' running
+Compiling 97 files with 0.8.23
+Solc 0.8.23 finished in 7.07s
+Compiler run [32msuccessful![0m
+
+INFO:Detectors:
+ParticleInfoReader.getLiquidityPosition(uint256).owner (contracts/protocol/ParticleInfoReader.sol#239) shadows:
+	- OwnableUpgradeable.owner() (lib/openzeppelin-contracts-upgradeable/contracts/access/OwnableUpgradeable.sol#48-50) (function)
+FreeMintNft.constructor(string,string).name (test/Mint.t.sol#259) shadows:
+	- ERC721.name() (lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol#79-81) (function)
+	- IERC721Metadata.name() (lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol#16) (function)
+FreeMintNft.constructor(string,string).symbol (test/Mint.t.sol#259) shadows:
+	- ERC721.symbol() (lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol#86-88) (function)
+	- IERC721Metadata.symbol() (lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol#21) (function)
+Reference: https://github.com/crytic/slither/wiki/Detector-Documentation#local-variable-shadowing
+INFO:Slither:../2023-12-particle/. analyzed (104 contracts with 1 detectors), 3 result(s) found
