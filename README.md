@@ -1,13 +1,13 @@
 # Particle Leverage AMM (LAMM) Protocol 
 ### Invitational Audit Details
 
-- Total Prize Pool: $24,150 USDC (Notion: Total award pool)
-  - HM awards: $18,252 USDC (Notion: HM (main) pool)
-  - Analysis awards: $1,014 USDC (Notion: Analysis pool)
-  - QA awards: $507 USDC (Notion: QA pool)
-  - Gas awards: $507 USDC (Notion: Gas pool)
-  - Judge awards: $3,370 USDC (Notion: Judge Fee)
-  - Scout awards: $500 USDC (Notion: Scout fee - but usually $500 USDC)
+- Total Prize Pool: $24,150 USDC 
+  - HM awards: $18,252 USDC 
+  - Analysis awards: $1,014 USDC 
+  - QA awards: $507 USDC 
+  - Gas awards: $507 USDC 
+  - Judge awards: $3,370 USDC 
+  - Scout awards: $500 USDC 
 
 - Join [C4 Discord](https://discord.gg/code4rena) to register
 - Submit findings [using the C4 form](https://code4rena.com/contests/2023-12-particle-leverage-amm-protocol-invitational/submit)
