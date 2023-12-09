@@ -465,7 +465,12 @@ contract ParticlePositionManager is
                 cache.collateralFrom + cache.tokenFromPremium,
                 cache.amountSpent + cache.amountFromAdd + cache.token1Owed
             );
-            Base.refundWithCheck(borrower, cache.tokenTo, cache.amountReceived, cache.amountToAdd + cache.token0Owed);
+            Base.refundWithCheck(
+                borrower,
+                cache.tokenTo,
+                cache.amountReceived + cache.tokenToPremium,
+                cache.amountToAdd + cache.token0Owed
+            );
         } else {
             cache.token0Owed = cache.token0Owed < cache.tokenFromPremium ? cache.token0Owed : cache.tokenFromPremium;
             cache.token1Owed = cache.token1Owed < cache.tokenToPremium ? cache.token1Owed : cache.tokenToPremium;
@@ -475,7 +480,12 @@ contract ParticlePositionManager is
                 cache.collateralFrom + cache.tokenFromPremium,
                 cache.amountSpent + cache.amountFromAdd + cache.token0Owed
             );
-            Base.refundWithCheck(borrower, cache.tokenTo, cache.amountReceived, cache.amountToAdd + cache.token1Owed);
+            Base.refundWithCheck(
+                borrower,
+                cache.tokenTo,
+                cache.amountReceived + cache.tokenToPremium,
+                cache.amountToAdd + cache.token1Owed
+            );
         }
 
         // pay for interest
