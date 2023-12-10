@@ -220,13 +220,7 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         // close position
         vm.startPrank(SWAPPER);
         particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: uint96(lienId),
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn,
-                amountSwap: amountSwap,
-                data: data
-            })
+            DataStruct.ClosePositionParams({lienId: uint96(lienId), amountSwap: amountSwap, data: data})
         );
         vm.stopPrank();
     }
@@ -286,13 +280,7 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         // close position
         vm.startPrank(SWAPPER);
         particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: uint96(lienId),
-                repayFrom: amount0ToReturn,
-                repayTo: amount1ToReturn,
-                amountSwap: amountSwap,
-                data: data
-            })
+            DataStruct.ClosePositionParams({lienId: uint96(lienId), amountSwap: amountSwap, data: data})
         );
         vm.stopPrank();
     }
@@ -361,42 +349,32 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         }
     }
 
-    function testLongCannotOverspendFromPosition() public {
+    function testLongDeclareSwapWontOverspend() public {
         _openLongPosition();
 
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseLongPosition(0, true, true);
+        (, uint256 amount1ToReturn, uint256 amountSwap, bytes memory data) = _prepareCloseLongPosition(0, true, true);
 
         (, uint128 tokenFromPremium) = particleInfoReader.getPremium(SWAPPER, 0);
 
         // close position
         vm.startPrank(SWAPPER);
-        vm.expectRevert(abi.encodeWithSelector(Errors.OverSpend.selector));
+        uint256 amountBefore = WETH.balanceOf(address(particlePositionManager));
         particlePositionManager.closePosition(
             DataStruct.ClosePositionParams({
                 lienId: 0,
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn,
-                amountSwap: amountSwap + tokenFromPremium + 1, // overspend
+                amountSwap: amountSwap + tokenFromPremium + 1, // declare more, but won't overspend
                 data: data
             })
         );
+        uint256 amountAfter = WETH.balanceOf(address(particlePositionManager));
+        assertLe(amountBefore - amountAfter, amountSwap + tokenFromPremium + amount1ToReturn);
         vm.stopPrank();
     }
 
     function testLongCanSpendAllPremiumFromPosition() public {
         _openLongPosition();
 
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseLongPosition(0, true, true);
+        (, , uint256 amountSwap, bytes memory data) = _prepareCloseLongPosition(0, true, true);
 
         (, uint128 tokenFromPremium) = particleInfoReader.getPremium(SWAPPER, 0);
 
@@ -405,34 +383,7 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         particlePositionManager.closePosition(
             DataStruct.ClosePositionParams({
                 lienId: 0,
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn,
                 amountSwap: amountSwap + tokenFromPremium, // all premium
-                data: data
-            })
-        );
-        vm.stopPrank();
-    }
-
-    function testLongCannotOverpayFromPosition() public {
-        _openLongPosition();
-
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseLongPosition(0, true, true);
-
-        // close position
-        vm.startPrank(SWAPPER);
-        vm.expectRevert(abi.encodeWithSelector(Errors.InsufficientSwap.selector));
-        particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: 0,
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn + amount0ToReturn / 10, // overpay
-                amountSwap: amountSwap,
                 data: data
             })
         );
@@ -442,12 +393,7 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
     function testLongCannotOverspendFromData() public {
         _openLongPosition();
 
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseLongPosition(0, true, true);
+        (, uint256 amount1ToReturn, uint256 amountSwap, bytes memory data) = _prepareCloseLongPosition(0, true, true);
 
         (, uint128 liquidity, , , , , , ) = particlePositionManager.liens(
             keccak256(abi.encodePacked(SWAPPER, uint96(0)))
@@ -473,13 +419,7 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         vm.startPrank(SWAPPER);
         vm.expectRevert(abi.encodeWithSelector(Errors.SwapFailed.selector));
         particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: 0,
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn,
-                amountSwap: amountSwap,
-                data: data
-            })
+            DataStruct.ClosePositionParams({lienId: 0, amountSwap: amountSwap, data: data})
         );
         vm.stopPrank();
     }
@@ -487,12 +427,7 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
     function testNonParticleRecipientInSwapData() public {
         _openLongPosition();
 
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseLongPosition(0, true, true);
+        (, uint256 amount1ToReturn, uint256 amountSwap, bytes memory data) = _prepareCloseLongPosition(0, true, true);
 
         (, uint128 liquidity, , , , , , ) = particlePositionManager.liens(
             keccak256(abi.encodePacked(SWAPPER, uint96(0)))
@@ -516,40 +451,71 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         data = abi.encodeWithSelector(ISwapRouter.exactInputSingle.selector, params);
 
         vm.startPrank(SWAPPER);
-        vm.expectRevert(abi.encodeWithSelector(Errors.InsufficientSwap.selector));
+        vm.expectRevert(abi.encodeWithSelector(Errors.InsufficientRepay.selector));
         particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: 0,
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn,
-                amountSwap: amountSwap,
-                data: data
-            })
+            DataStruct.ClosePositionParams({lienId: 0, amountSwap: amountSwap, data: data})
         );
         vm.stopPrank();
     }
 
-    function testLongCannotUnderpayToLp() public {
+    function testLongCannotUnderpayToLpBySwapMore() public {
         _openLongPosition();
 
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseLongPosition(0, true, true);
+        (, , uint256 amountSwap, bytes memory data) = _prepareCloseLongPosition(0, true, true);
 
-        // close position
+        (, uint128 liquidity, , , , , , ) = particlePositionManager.liens(
+            keccak256(abi.encodePacked(SWAPPER, uint96(0)))
+        );
+
+        (, uint256 ethCollateral) = particleInfoReader.getRequiredCollateral(liquidity, _tickLower, _tickUpper);
+
+        // get swap data
+        uint160 currentPrice = particleInfoReader.getCurrentPrice(address(USDC), address(WETH), FEE);
+        amountSwap = ethCollateral; // swap entire collateral
+        ISwapRouter.ExactInputSingleParams memory params = ISwapRouter.ExactInputSingleParams({
+            tokenIn: address(WETH),
+            tokenOut: address(USDC),
+            fee: FEE,
+            recipient: address(particlePositionManager),
+            deadline: block.timestamp,
+            amountIn: amountSwap,
+            amountOutMinimum: 0,
+            sqrtPriceLimitX96: currentPrice + currentPrice / SLIPPAGE_FACTOR
+        });
+        data = abi.encodeWithSelector(ISwapRouter.exactInputSingle.selector, params);
+
         vm.startPrank(SWAPPER);
         vm.expectRevert(abi.encodeWithSelector(Errors.InsufficientRepay.selector));
         particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: 0,
-                repayFrom: amount1ToReturn - amount1ToReturn / 10, // underpay
-                repayTo: amount0ToReturn - amount0ToReturn / 10, // underpay
-                amountSwap: amountSwap,
-                data: data
-            })
+            DataStruct.ClosePositionParams({lienId: 0, amountSwap: amountSwap, data: data})
+        );
+        vm.stopPrank();
+    }
+
+    function testLongCannotUnderpayToLpBySwapLess() public {
+        _openLongPosition();
+
+        (, , uint256 amountSwap, bytes memory data) = _prepareCloseLongPosition(0, true, true);
+
+        // get swap data
+        uint160 currentPrice = particleInfoReader.getCurrentPrice(address(USDC), address(WETH), FEE);
+        amountSwap = 0; // swap nothing
+        ISwapRouter.ExactInputSingleParams memory params = ISwapRouter.ExactInputSingleParams({
+            tokenIn: address(WETH),
+            tokenOut: address(USDC),
+            fee: FEE,
+            recipient: address(particlePositionManager),
+            deadline: block.timestamp,
+            amountIn: amountSwap,
+            amountOutMinimum: 0,
+            sqrtPriceLimitX96: currentPrice + currentPrice / SLIPPAGE_FACTOR
+        });
+        data = abi.encodeWithSelector(ISwapRouter.exactInputSingle.selector, params);
+
+        vm.startPrank(SWAPPER);
+        vm.expectRevert(abi.encodeWithSelector(Errors.InsufficientRepay.selector));
+        particlePositionManager.closePosition(
+            DataStruct.ClosePositionParams({lienId: 0, amountSwap: amountSwap, data: data})
         );
         vm.stopPrank();
     }
@@ -614,66 +580,31 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         }
     }
 
-    function testShortCannotOverspendFromPosition() public {
+    function testShortDeclareSwapWontOverspend() public {
         _openShortPosition();
 
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseShortPosition(0, true, true);
+        (uint256 amount0ToReturn, , uint256 amountSwap, bytes memory data) = _prepareCloseShortPosition(0, true, true);
         (uint128 tokenFromPremium, ) = particleInfoReader.getPremium(SWAPPER, 0);
 
         // close position
         vm.startPrank(SWAPPER);
-        vm.expectRevert(abi.encodeWithSelector(Errors.OverSpend.selector));
+        uint256 amountBefore = USDC.balanceOf(address(particlePositionManager));
         particlePositionManager.closePosition(
             DataStruct.ClosePositionParams({
                 lienId: 0,
-                repayFrom: amount0ToReturn,
-                repayTo: amount1ToReturn,
                 amountSwap: amountSwap + tokenFromPremium + 1, // overspend
                 data: data
             })
         );
-        vm.stopPrank();
-    }
-
-    function testShortCannotOverpayFromPosition() public {
-        _openShortPosition();
-
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseShortPosition(0, true, true);
-
-        // close position
-        vm.startPrank(SWAPPER);
-        vm.expectRevert(abi.encodeWithSelector(Errors.InsufficientSwap.selector));
-        particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: 0,
-                repayFrom: amount0ToReturn,
-                repayTo: amount1ToReturn + amount1ToReturn / 10, // overpay
-                amountSwap: amountSwap,
-                data: data
-            })
-        );
+        uint256 amountAfter = USDC.balanceOf(address(particlePositionManager));
+        assertLe(amountBefore - amountAfter, amountSwap + tokenFromPremium + amount0ToReturn);
         vm.stopPrank();
     }
 
     function testShortCannotOverspendFromData() public {
         _openShortPosition();
 
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseShortPosition(0, true, true);
+        (uint256 amount0ToReturn, , uint256 amountSwap, bytes memory data) = _prepareCloseShortPosition(0, true, true);
 
         // get lien info
         (, uint128 liquidity, , , , , , ) = particlePositionManager.liens(
@@ -701,38 +632,72 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         vm.startPrank(SWAPPER);
         vm.expectRevert(abi.encodeWithSelector(Errors.SwapFailed.selector));
         particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: 0,
-                repayFrom: amount0ToReturn,
-                repayTo: amount1ToReturn,
-                amountSwap: amountSwap,
-                data: data
-            })
+            DataStruct.ClosePositionParams({lienId: 0, amountSwap: amountSwap, data: data})
         );
         vm.stopPrank();
     }
 
-    function testShortCannotUnderpayToLp() public {
+    function testShortCannotUnderpayToLpBySwapMore() public {
         _openShortPosition();
 
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseShortPosition(0, true, true);
+        (, , uint256 amountSwap, bytes memory data) = _prepareCloseShortPosition(0, true, true);
+
+        // get lien info
+        (, uint128 liquidity, , , , , , ) = particlePositionManager.liens(
+            keccak256(abi.encodePacked(SWAPPER, uint96(0)))
+        );
+
+        (uint256 usdcCollateral, ) = particleInfoReader.getRequiredCollateral(liquidity, _tickLower, _tickUpper);
+
+        // get swap data
+        uint160 currentPrice = particleInfoReader.getCurrentPrice(address(USDC), address(WETH), FEE);
+        amountSwap = usdcCollateral; // swap entire collateral
+        ISwapRouter.ExactInputSingleParams memory params = ISwapRouter.ExactInputSingleParams({
+            tokenIn: address(USDC),
+            tokenOut: address(WETH),
+            fee: FEE,
+            recipient: address(particlePositionManager),
+            deadline: block.timestamp,
+            amountIn: amountSwap,
+            amountOutMinimum: 0,
+            sqrtPriceLimitX96: currentPrice - currentPrice / SLIPPAGE_FACTOR
+        });
+        data = abi.encodeWithSelector(ISwapRouter.exactInputSingle.selector, params);
 
         // close position
         vm.startPrank(SWAPPER);
         vm.expectRevert(abi.encodeWithSelector(Errors.InsufficientRepay.selector));
         particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: 0,
-                repayFrom: amount0ToReturn - amount0ToReturn / 10, // underpay
-                repayTo: amount1ToReturn - amount1ToReturn / 10, // underpay
-                amountSwap: amountSwap,
-                data: data
-            })
+            DataStruct.ClosePositionParams({lienId: 0, amountSwap: amountSwap, data: data})
+        );
+        vm.stopPrank();
+    }
+
+    function testShortCannotUnderpayToLpBySwapLess() public {
+        _openShortPosition();
+
+        (, , uint256 amountSwap, bytes memory data) = _prepareCloseShortPosition(0, true, true);
+
+        // get swap data
+        uint160 currentPrice = particleInfoReader.getCurrentPrice(address(USDC), address(WETH), FEE);
+        amountSwap = 0; // swap nothing
+        ISwapRouter.ExactInputSingleParams memory params = ISwapRouter.ExactInputSingleParams({
+            tokenIn: address(USDC),
+            tokenOut: address(WETH),
+            fee: FEE,
+            recipient: address(particlePositionManager),
+            deadline: block.timestamp,
+            amountIn: amountSwap,
+            amountOutMinimum: 0,
+            sqrtPriceLimitX96: currentPrice - currentPrice / SLIPPAGE_FACTOR
+        });
+        data = abi.encodeWithSelector(ISwapRouter.exactInputSingle.selector, params);
+
+        // close position
+        vm.startPrank(SWAPPER);
+        vm.expectRevert(abi.encodeWithSelector(Errors.InsufficientRepay.selector));
+        particlePositionManager.closePosition(
+            DataStruct.ClosePositionParams({lienId: 0, amountSwap: amountSwap, data: data})
         );
         vm.stopPrank();
     }
@@ -766,7 +731,7 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         vm.startPrank(WHALE);
         vm.expectRevert(abi.encodeWithSelector(Errors.RecordEmpty.selector));
         particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({lienId: 0, repayFrom: 0, repayTo: 0, amountSwap: 0, data: new bytes(0)})
+            DataStruct.ClosePositionParams({lienId: 0, amountSwap: 0, data: new bytes(0)})
         );
         vm.stopPrank();
     }
@@ -855,11 +820,7 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
             _swap(WHALE, address(WETH), address(USDC), FEE, WHALE_SHORT_AMOUNT);
         }
 
-        (uint256 amount0ToReturn, uint256 amount1ToReturn, uint256 amountSwap, ) = _prepareCloseLongPosition(
-            0,
-            true,
-            true
-        );
+        (, , uint256 amountSwap, ) = _prepareCloseLongPosition(0, true, true);
 
         ///@dev factor in rounding approximation
         (, uint128 actualPremium1) = particleInfoReader.getPremium(SWAPPER, 0);
@@ -879,13 +840,7 @@ contract ClosePositionTest is ParticlePositionManagerTestBase {
         vm.startPrank(SWAPPER);
         vm.expectRevert(abi.encodeWithSelector(Errors.OverRefund.selector));
         particlePositionManager.closePosition(
-            DataStruct.ClosePositionParams({
-                lienId: 0,
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn,
-                amountSwap: amountSwap + actualPremium1,
-                data: data
-            })
+            DataStruct.ClosePositionParams({lienId: 0, amountSwap: amountSwap + actualPremium1, data: data})
         );
         vm.stopPrank();
     }
