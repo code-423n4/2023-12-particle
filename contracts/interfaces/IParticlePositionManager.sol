@@ -79,8 +79,6 @@ interface IParticlePositionManager {
      * @notice Basic close position of a leveraged swap
      * @dev The passed-in amount to return/gain are best effort simulated from frontend
      * @param params.lienId the ID for the existing loan
-     * @param params.repayFrom amount of token to stay (the tokenTo in openPosition) and repay the loan
-     * @param params.repayTo amount of token to swap back (the tokenFrom in openPosition) and repay the loan
      * @param params.amountSwap total amount of tokenFrom (the tokenTo in openPosition) to swap back
      * @param params.data calldata bytes to pass into DEX aggregator to perform swapping
      */
@@ -90,8 +88,6 @@ interface IParticlePositionManager {
      * @notice Basic liquidation position of a leveraged swap
      * @dev The passed-in amount to pay for LP is best effort simulated from frontend
      * @param params.lienId the ID for the existing loan
-     * @param params.repayFrom amount of token to stay (the tokenTo in openPosition) and repay the loan
-     * @param params.repayTo amount of token to swap back (the tokenFrom in openPosition) and repay the loan
      * @param params.amountSwap total amount of tokenFrom (the tokenTo in openPosition) to swap back
      * @param params.data calldata bytes to pass into DEX aggregator to perform swapping
      * @param borrower the address

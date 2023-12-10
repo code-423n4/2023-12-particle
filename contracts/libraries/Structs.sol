@@ -18,8 +18,6 @@ library DataStruct {
 
     struct ClosePositionParams {
         uint96 lienId;
-        uint256 repayFrom;
-        uint256 repayTo;
         uint256 amountSwap;
         bytes data;
     }

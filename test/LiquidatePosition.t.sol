@@ -200,13 +200,7 @@ contract LiquidationTest is ParticlePositionManagerTestBase {
         // liquidate position
         vm.startPrank(LIQUIDATOR);
         particlePositionManager.liquidatePosition(
-            DataStruct.ClosePositionParams({
-                lienId: uint96(lienId),
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn,
-                amountSwap: amountSwap,
-                data: data
-            }),
+            DataStruct.ClosePositionParams({lienId: uint96(lienId), amountSwap: amountSwap, data: data}),
             SWAPPER
         );
         vm.stopPrank();
@@ -221,13 +215,7 @@ contract LiquidationTest is ParticlePositionManagerTestBase {
         // liquidate position
         vm.startPrank(LIQUIDATOR);
         particlePositionManager.liquidatePosition(
-            DataStruct.ClosePositionParams({
-                lienId: uint96(lienId),
-                repayFrom: amount0ToReturn,
-                repayTo: amount1ToReturn,
-                amountSwap: amountSwap,
-                data: data
-            }),
+            DataStruct.ClosePositionParams({lienId: uint96(lienId), amountSwap: amountSwap, data: data}),
             SWAPPER
         );
         vm.stopPrank();
@@ -327,23 +315,12 @@ contract LiquidationTest is ParticlePositionManagerTestBase {
         _openLongPosition();
         _addPremium(PREMIUM_0, PREMIUM_1);
 
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseLongPosition(LIEN_ID);
+        (, , uint256 amountSwap, bytes memory data) = _prepareCloseLongPosition(LIEN_ID);
 
         vm.startPrank(LIQUIDATOR);
         vm.expectRevert(abi.encodeWithSelector(Errors.LiquidationNotMet.selector));
         particlePositionManager.liquidatePosition(
-            DataStruct.ClosePositionParams({
-                lienId: uint96(LIEN_ID),
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn,
-                amountSwap: amountSwap,
-                data: data
-            }),
+            DataStruct.ClosePositionParams({lienId: uint96(LIEN_ID), amountSwap: amountSwap, data: data}),
             SWAPPER
         );
         vm.stopPrank();
@@ -364,23 +341,12 @@ contract LiquidationTest is ParticlePositionManagerTestBase {
         vm.warp(block.timestamp + 1 seconds);
         _renewalCutoff();
         vm.warp(block.timestamp + 7 days - 1 seconds);
-        (
-            uint256 amount0ToReturn,
-            uint256 amount1ToReturn,
-            uint256 amountSwap,
-            bytes memory data
-        ) = _prepareCloseLongPosition(LIEN_ID);
+        (, , uint256 amountSwap, bytes memory data) = _prepareCloseLongPosition(LIEN_ID);
 
         vm.startPrank(LIQUIDATOR);
         vm.expectRevert(abi.encodeWithSelector(Errors.LiquidationNotMet.selector));
         particlePositionManager.liquidatePosition(
-            DataStruct.ClosePositionParams({
-                lienId: uint96(LIEN_ID),
-                repayFrom: amount1ToReturn,
-                repayTo: amount0ToReturn,
-                amountSwap: amountSwap,
-                data: data
-            }),
+            DataStruct.ClosePositionParams({lienId: uint96(LIEN_ID), amountSwap: amountSwap, data: data}),
             SWAPPER
         );
         vm.stopPrank();

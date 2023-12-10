@@ -394,16 +394,13 @@ contract ParticlePositionManager is
         Lien.Info memory lien,
         address borrower
     ) internal {
-        // check for overspend
-        if (params.amountSwap + params.repayFrom > cache.collateralFrom + cache.tokenFromPremium)
-            revert Errors.OverSpend();
-
         // optimistically use the input numbers to swap for repay
+        /// @dev amountSwap overspend will be caught by refundWithCheck step in below
         (cache.amountSpent, cache.amountReceived) = Base.swap(
             cache.tokenFrom,
             cache.tokenTo,
             params.amountSwap,
-            params.repayTo,
+            0, /// @dev we check cache.amountReceived is sufficient to repay LP in below
             DEX_AGGREGATOR,
             params.data
         );
@@ -413,8 +410,12 @@ contract ParticlePositionManager is
         (cache.amountToAdd, cache.amountFromAdd) = Base.getRequiredRepay(lien.liquidity, lien.tokenId);
         if (!lien.zeroForOne) (cache.amountToAdd, cache.amountFromAdd) = (cache.amountFromAdd, cache.amountToAdd);
 
-        // the liquidity to add must be no less than the declared amount
-        if (cache.amountFromAdd > params.repayFrom || cache.amountToAdd > params.repayTo) {
+        // the liquidity to add must be no less than the available amount
+        /// @dev the max available amount contains the tokensOwed, will have another check in below at refundWithCheck
+        if (
+            cache.amountFromAdd > cache.collateralFrom + cache.tokenFromPremium - cache.amountSpent ||
+            cache.amountToAdd > cache.amountReceived + cache.tokenToPremium
+        ) {
             revert Errors.InsufficientRepay();
         }
 
